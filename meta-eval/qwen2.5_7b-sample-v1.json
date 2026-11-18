@@ -1,0 +1,2190 @@
+{
+  "judge": "qwen2.5:7b",
+  "summary": {
+    "faithfulness": {
+      "n": 34,
+      "judge_errors": 0,
+      "accuracy": 0.8529411764705882,
+      "catch_rate": 0.7647058823529411,
+      "false_alarm_rate": 0.058823529411764705,
+      "kappa": 0.7058823529411764,
+      "by_source": {
+        "flip": {
+          "n": 4,
+          "agree": 2,
+          "bad": 4,
+          "good": 0
+        },
+        "injected": {
+          "n": 8,
+          "agree": 8,
+          "bad": 8,
+          "good": 0
+        },
+        "natural": {
+          "n": 18,
+          "agree": 16,
+          "bad": 1,
+          "good": 17
+        },
+        "number_swap": {
+          "n": 4,
+          "agree": 3,
+          "bad": 4,
+          "good": 0
+        }
+      }
+    },
+    "correctness": {
+      "n": 31,
+      "judge_errors": 0,
+      "accuracy": 1.0,
+      "catch_rate": 1.0,
+      "false_alarm_rate": 0.0,
+      "kappa": 1.0,
+      "by_source": {
+        "natural": {
+          "n": 17,
+          "agree": 17,
+          "bad": 1,
+          "good": 16
+        },
+        "number_swap": {
+          "n": 14,
+          "agree": 14,
+          "bad": 14,
+          "good": 0
+        }
+      }
+    }
+  },
+  "items": [
+    {
+      "run": "rag-7b-hybrid",
+      "id": "q01",
+      "question": "How old do I need to be to apply for a loan?",
+      "contexts": [
+        "Applicants must be at least 21 years old at the time of application. The applicant's age at loan maturity must not exceed 60 years for salaried applicants and 65 years for self-employed applicants.",
+        "Unsecured loan for registered businesses for working capital or expansion. Loan amount ranges from Rs 5,00,000 to Rs 50,00,000. Tenure ranges from 12 to 48 months. Interest rates range from 14% to 26% per annum.",
+        "Salaried applicants must have a minimum net monthly income of Rs 25,000. Self-employed applicants must show a minimum average monthly income of Rs 40,000, computed from the last two years of income tax returns.",
+        "The minimum credit bureau score is 700. Applicants with a score between 650 and 699 may be approved only with a co-applicant whose score is 720 or higher. Applications with a score below 650 are declined automatically. Applicants with no credit history (\"new to credit\") are eligible only for loans up to Rs 1,00,000."
+      ],
+      "reference": "Applicants must be at least 21 years old.",
+      "note": "",
+      "kind": "faithfulness",
+      "source": "natural",
+      "answer": "You must be at least 21 years old to apply for a loan with Northwind Credit [1].",
+      "label": true,
+      "pred": true,
+      "judge_details": {
+        "claims": [
+          {
+            "claim": "You must be at least 21 years old to apply for a loan with Northwind Credit.",
+            "evidence": "[1] Applicants must be at least 21 years old at the time of application.",
+            "supported": true
+          }
+        ]
+      },
+      "judge_error": null
+    },
+    {
+      "run": "rag-7b-hybrid",
+      "id": "q01",
+      "question": "How old do I need to be to apply for a loan?",
+      "contexts": [
+        "Applicants must be at least 21 years old at the time of application. The applicant's age at loan maturity must not exceed 60 years for salaried applicants and 65 years for self-employed applicants.",
+        "Unsecured loan for registered businesses for working capital or expansion. Loan amount ranges from Rs 5,00,000 to Rs 50,00,000. Tenure ranges from 12 to 48 months. Interest rates range from 14% to 26% per annum.",
+        "Salaried applicants must have a minimum net monthly income of Rs 25,000. Self-employed applicants must show a minimum average monthly income of Rs 40,000, computed from the last two years of income tax returns.",
+        "The minimum credit bureau score is 700. Applicants with a score between 650 and 699 may be approved only with a co-applicant whose score is 720 or higher. Applications with a score below 650 are declined automatically. Applicants with no credit history (\"new to credit\") are eligible only for loans up to Rs 1,00,000."
+      ],
+      "reference": "Applicants must be at least 21 years old.",
+      "note": "",
+      "kind": "correctness",
+      "source": "natural",
+      "answer": "You must be at least 21 years old to apply for a loan with Northwind Credit [1].",
+      "label": true,
+      "pred": true,
+      "judge_details": {
+        "facts": [
+          {
+            "fact": "Applicants must be at least 21 years old.",
+            "answer_says": "You must be at least 21 years old to apply for a loan with Northwind Credit [1].",
+            "status": "stated",
+            "essential": true
+          }
+        ]
+      },
+      "judge_error": null
+    },
+    {
+      "run": "rag-7b-hybrid",
+      "id": "q01",
+      "question": "How old do I need to be to apply for a loan?",
+      "contexts": [
+        "Applicants must be at least 21 years old at the time of application. The applicant's age at loan maturity must not exceed 60 years for salaried applicants and 65 years for self-employed applicants.",
+        "Unsecured loan for registered businesses for working capital or expansion. Loan amount ranges from Rs 5,00,000 to Rs 50,00,000. Tenure ranges from 12 to 48 months. Interest rates range from 14% to 26% per annum.",
+        "Salaried applicants must have a minimum net monthly income of Rs 25,000. Self-employed applicants must show a minimum average monthly income of Rs 40,000, computed from the last two years of income tax returns.",
+        "The minimum credit bureau score is 700. Applicants with a score between 650 and 699 may be approved only with a co-applicant whose score is 720 or higher. Applications with a score below 650 are declined automatically. Applicants with no credit history (\"new to credit\") are eligible only for loans up to Rs 1,00,000."
+      ],
+      "reference": "Applicants must be at least 21 years old.",
+      "note": "21 -> 32",
+      "kind": "correctness",
+      "source": "number_swap",
+      "answer": "You must be at least 32 years old to apply for a loan with Northwind Credit [1].",
+      "label": false,
+      "pred": false,
+      "judge_details": {
+        "facts": [
+          {
+            "fact": "Applicants must be at least 21 years old.",
+            "answer_says": "You must be at least 32 years old to apply for a loan with Northwind Credit [1].",
+            "status": "contradicted",
+            "essential": true
+          }
+        ]
+      },
+      "judge_error": null
+    },
+    {
+      "run": "rag-7b-hybrid",
+      "id": "q01",
+      "question": "How old do I need to be to apply for a loan?",
+      "contexts": [
+        "Applicants must be at least 21 years old at the time of application. The applicant's age at loan maturity must not exceed 60 years for salaried applicants and 65 years for self-employed applicants.",
+        "Unsecured loan for registered businesses for working capital or expansion. Loan amount ranges from Rs 5,00,000 to Rs 50,00,000. Tenure ranges from 12 to 48 months. Interest rates range from 14% to 26% per annum.",
+        "Salaried applicants must have a minimum net monthly income of Rs 25,000. Self-employed applicants must show a minimum average monthly income of Rs 40,000, computed from the last two years of income tax returns.",
+        "The minimum credit bureau score is 700. Applicants with a score between 650 and 699 may be approved only with a co-applicant whose score is 720 or higher. Applications with a score below 650 are declined automatically. Applicants with no credit history (\"new to credit\") are eligible only for loans up to Rs 1,00,000."
+      ],
+      "reference": "Applicants must be at least 21 years old.",
+      "note": "21 -> 32",
+      "kind": "faithfulness",
+      "source": "number_swap",
+      "answer": "You must be at least 32 years old to apply for a loan with Northwind Credit [1].",
+      "label": false,
+      "pred": true,
+      "judge_details": {
+        "claims": []
+      },
+      "judge_error": null
+    },
+    {
+      "run": "rag-7b-hybrid",
+      "id": "q02",
+      "question": "I am salaried. What is the minimum monthly salary needed?",
+      "contexts": [
+        "Salaried applicants must have a minimum net monthly income of Rs 25,000. Self-employed applicants must show a minimum average monthly income of Rs 40,000, computed from the last two years of income tax returns.",
+        "The fixed obligation to income ratio (FOIR) including the proposed EMI must not exceed 50% of net monthly income. For applicants earning more than Rs 1,00,000 per month, the FOIR limit is relaxed to 60%.",
+        "Salaried applicants must submit salary slips for the last 3 months and bank statements for the last 6 months showing salary credits.",
+        "Applicants must be at least 21 years old at the time of application. The applicant's age at loan maturity must not exceed 60 years for salaried applicants and 65 years for self-employed applicants."
+      ],
+      "reference": "Salaried applicants need a minimum net monthly income of Rs 25,000.",
+      "note": "minimum -> maximum",
+      "kind": "faithfulness",
+      "source": "flip",
+      "answer": "As a salaried applicant, you need a maximum net monthly income of Rs 25,000. [1]",
+      "label": false,
+      "pred": false,
+      "judge_details": {
+        "claims": [
+          {
+            "claim": "As a salaried applicant, you need a maximum net monthly income of Rs 25,000.",
+            "evidence": "Salaried applicants must have a minimum net monthly income of Rs 25,000.",
+            "supported": false
+          }
+        ]
+      },
+      "judge_error": null
+    },
+    {
+      "run": "rag-7b-hybrid",
+      "id": "q03",
+      "question": "What minimum income does a self-employed person need to show?",
+      "contexts": [
+        "Salaried applicants must have a minimum net monthly income of Rs 25,000. Self-employed applicants must show a minimum average monthly income of Rs 40,000, computed from the last two years of income tax returns.",
+        "The fixed obligation to income ratio (FOIR) including the proposed EMI must not exceed 50% of net monthly income. For applicants earning more than Rs 1,00,000 per month, the FOIR limit is relaxed to 60%.",
+        "Self-employed applicants must submit income tax returns for the last 2 years and bank statements for the last 12 months. Businesses must additionally submit GST returns for the last 12 months and a certificate of registration or incorporation.",
+        "Salaried applicants must submit salary slips for the last 3 months and bank statements for the last 6 months showing salary credits."
+      ],
+      "reference": "Self-employed applicants must show a minimum average monthly income of Rs 40,000.",
+      "note": "",
+      "kind": "faithfulness",
+      "source": "natural",
+      "answer": "A self-employed person must show a minimum average monthly income of Rs 40,000, calculated from the last two years of income tax returns. [1]",
+      "label": true,
+      "pred": true,
+      "judge_details": {
+        "claims": [
+          {
+            "claim": "A self-employed person must show a minimum average monthly income of Rs 40,000",
+            "evidence": "[1] Self-employed applicants must show a minimum average monthly income of Rs 40,000, computed from the last two years of income tax returns.",
+            "supported": true
+          },
+          {
+            "claim": "The income is calculated from the last two years of income tax returns",
+            "evidence": "[1] Self-employed applicants must show a minimum average monthly income of Rs 40,000, computed from the last two years of income tax returns.",
+            "supported": true
+          }
+        ]
+      },
+      "judge_error": null
+    },
+    {
+      "run": "rag-7b-hybrid",
+      "id": "q03",
+      "question": "What minimum income does a self-employed person need to show?",
+      "contexts": [
+        "Salaried applicants must have a minimum net monthly income of Rs 25,000. Self-employed applicants must show a minimum average monthly income of Rs 40,000, computed from the last two years of income tax returns.",
+        "The fixed obligation to income ratio (FOIR) including the proposed EMI must not exceed 50% of net monthly income. For applicants earning more than Rs 1,00,000 per month, the FOIR limit is relaxed to 60%.",
+        "Self-employed applicants must submit income tax returns for the last 2 years and bank statements for the last 12 months. Businesses must additionally submit GST returns for the last 12 months and a certificate of registration or incorporation.",
+        "Salaried applicants must submit salary slips for the last 3 months and bank statements for the last 6 months showing salary credits."
+      ],
+      "reference": "Self-employed applicants must show a minimum average monthly income of Rs 40,000.",
+      "note": "",
+      "kind": "correctness",
+      "source": "natural",
+      "answer": "A self-employed person must show a minimum average monthly income of Rs 40,000, calculated from the last two years of income tax returns. [1]",
+      "label": true,
+      "pred": true,
+      "judge_details": {
+        "facts": [
+          {
+            "fact": "Self-employed applicants must show a minimum average monthly income of Rs 40,000.",
+            "answer_says": "A self-employed person must show a minimum average monthly income of Rs 40,000, calculated from the last two years of income tax returns.",
+            "status": "stated",
+            "essential": true
+          }
+        ]
+      },
+      "judge_error": null
+    },
+    {
+      "run": "rag-7b-hybrid",
+      "id": "q03",
+      "question": "What minimum income does a self-employed person need to show?",
+      "contexts": [
+        "Salaried applicants must have a minimum net monthly income of Rs 25,000. Self-employed applicants must show a minimum average monthly income of Rs 40,000, computed from the last two years of income tax returns.",
+        "The fixed obligation to income ratio (FOIR) including the proposed EMI must not exceed 50% of net monthly income. For applicants earning more than Rs 1,00,000 per month, the FOIR limit is relaxed to 60%.",
+        "Self-employed applicants must submit income tax returns for the last 2 years and bank statements for the last 12 months. Businesses must additionally submit GST returns for the last 12 months and a certificate of registration or incorporation.",
+        "Salaried applicants must submit salary slips for the last 3 months and bank statements for the last 6 months showing salary credits."
+      ],
+      "reference": "Self-employed applicants must show a minimum average monthly income of Rs 40,000.",
+      "note": "40,000 -> 60,000",
+      "kind": "correctness",
+      "source": "number_swap",
+      "answer": "A self-employed person must show a minimum average monthly income of Rs 60,000, calculated from the last two years of income tax returns. [1]",
+      "label": false,
+      "pred": false,
+      "judge_details": {
+        "facts": [
+          {
+            "fact": "Self-employed applicants must show a minimum average monthly income of Rs 40,000.",
+            "answer_says": "A self-employed person must show a minimum average monthly income of Rs 60,000.",
+            "status": "contradicted",
+            "essential": true
+          }
+        ]
+      },
+      "judge_error": null
+    },
+    {
+      "run": "rag-7b-hybrid",
+      "id": "q03",
+      "question": "What minimum income does a self-employed person need to show?",
+      "contexts": [
+        "Salaried applicants must have a minimum net monthly income of Rs 25,000. Self-employed applicants must show a minimum average monthly income of Rs 40,000, computed from the last two years of income tax returns.",
+        "The fixed obligation to income ratio (FOIR) including the proposed EMI must not exceed 50% of net monthly income. For applicants earning more than Rs 1,00,000 per month, the FOIR limit is relaxed to 60%.",
+        "Self-employed applicants must submit income tax returns for the last 2 years and bank statements for the last 12 months. Businesses must additionally submit GST returns for the last 12 months and a certificate of registration or incorporation.",
+        "Salaried applicants must submit salary slips for the last 3 months and bank statements for the last 6 months showing salary credits."
+      ],
+      "reference": "Self-employed applicants must show a minimum average monthly income of Rs 40,000.",
+      "note": "added: Customers who hold a Northwind salary account also get a 0.25% interest rate discount.",
+      "kind": "faithfulness",
+      "source": "injected",
+      "answer": "A self-employed person must show a minimum average monthly income of Rs 40,000, calculated from the last two years of income tax returns. [1] Customers who hold a Northwind salary account also get a 0.25% interest rate discount.",
+      "label": false,
+      "pred": false,
+      "judge_details": {
+        "claims": [
+          {
+            "claim": "A self-employed person must show a minimum average monthly income of Rs 40,000, calculated from the last two years of income tax returns.",
+            "evidence": "[1] Self-employed applicants must show a minimum average monthly income of Rs 40,000, computed from the last two years of income tax returns.",
+            "supported": true
+          },
+          {
+            "claim": "Customers who hold a Northwind salary account also get a 0.25% interest rate discount.",
+            "evidence": "",
+            "supported": false
+          }
+        ]
+      },
+      "judge_error": null
+    },
+    {
+      "run": "rag-7b-hybrid",
+      "id": "q07",
+      "question": "How long must I have worked at my current company?",
+      "contexts": [
+        "Salaried applicants must have at least 1 year of total work experience and at least 6 months with their current employer. Self-employed applicants and businesses must have a business vintage of at least 3 years.",
+        "Salaried applicants must have a minimum net monthly income of Rs 25,000. Self-employed applicants must show a minimum average monthly income of Rs 40,000, computed from the last two years of income tax returns.",
+        "Self-employed applicants must submit income tax returns for the last 2 years and bank statements for the last 12 months. Businesses must additionally submit GST returns for the last 12 months and a certificate of registration or incorporation.",
+        "Salaried applicants must submit salary slips for the last 3 months and bank statements for the last 6 months showing salary credits."
+      ],
+      "reference": "At least 6 months with the current employer.",
+      "note": "",
+      "kind": "faithfulness",
+      "source": "natural",
+      "answer": "You must have worked at your current employer for at least 6 months. [1]",
+      "label": true,
+      "pred": true,
+      "judge_details": {
+        "claims": [
+          {
+            "claim": "You must have worked at your current employer for at least 6 months.",
+            "evidence": "[1] Salaried applicants must have at least 1 year of total work experience and at least 6 months with their current employer.",
+            "supported": true
+          }
+        ]
+      },
+      "judge_error": null
+    },
+    {
+      "run": "rag-7b-hybrid",
+      "id": "q07",
+      "question": "How long must I have worked at my current company?",
+      "contexts": [
+        "Salaried applicants must have at least 1 year of total work experience and at least 6 months with their current employer. Self-employed applicants and businesses must have a business vintage of at least 3 years.",
+        "Salaried applicants must have a minimum net monthly income of Rs 25,000. Self-employed applicants must show a minimum average monthly income of Rs 40,000, computed from the last two years of income tax returns.",
+        "Self-employed applicants must submit income tax returns for the last 2 years and bank statements for the last 12 months. Businesses must additionally submit GST returns for the last 12 months and a certificate of registration or incorporation.",
+        "Salaried applicants must submit salary slips for the last 3 months and bank statements for the last 6 months showing salary credits."
+      ],
+      "reference": "At least 6 months with the current employer.",
+      "note": "",
+      "kind": "correctness",
+      "source": "natural",
+      "answer": "You must have worked at your current employer for at least 6 months. [1]",
+      "label": true,
+      "pred": true,
+      "judge_details": {
+        "facts": [
+          {
+            "fact": "At least 6 months with the current employer.",
+            "answer_says": "You must have worked at your current employer for at least 6 months.",
+            "status": "stated",
+            "essential": true
+          }
+        ]
+      },
+      "judge_error": null
+    },
+    {
+      "run": "rag-7b-hybrid",
+      "id": "q07",
+      "question": "How long must I have worked at my current company?",
+      "contexts": [
+        "Salaried applicants must have at least 1 year of total work experience and at least 6 months with their current employer. Self-employed applicants and businesses must have a business vintage of at least 3 years.",
+        "Salaried applicants must have a minimum net monthly income of Rs 25,000. Self-employed applicants must show a minimum average monthly income of Rs 40,000, computed from the last two years of income tax returns.",
+        "Self-employed applicants must submit income tax returns for the last 2 years and bank statements for the last 12 months. Businesses must additionally submit GST returns for the last 12 months and a certificate of registration or incorporation.",
+        "Salaried applicants must submit salary slips for the last 3 months and bank statements for the last 6 months showing salary credits."
+      ],
+      "reference": "At least 6 months with the current employer.",
+      "note": "6 -> 9",
+      "kind": "correctness",
+      "source": "number_swap",
+      "answer": "You must have worked at your current employer for at least 9 months. [1]",
+      "label": false,
+      "pred": false,
+      "judge_details": {
+        "facts": [
+          {
+            "fact": "At least 6 months with the current employer.",
+            "answer_says": "You must have worked at your current employer for at least 9 months.",
+            "status": "contradicted",
+            "essential": true
+          }
+        ]
+      },
+      "judge_error": null
+    },
+    {
+      "run": "rag-7b-hybrid",
+      "id": "q09",
+      "question": "What is the biggest personal loan I can get?",
+      "contexts": [
+        "Unsecured loan for salaried and self-employed individuals. Loan amount ranges from Rs 50,000 to Rs 15,00,000. Tenure ranges from 12 to 60 months. Interest rates range from 11.5% to 24% per annum on a reducing-balance basis, based on the applicant's risk grade.",
+        "Personal loans and business term loans are disbursed only to the borrower's own verified bank account. Supplier invoice financing is disbursed directly to the approved supplier's verified bank account and never to the merchant.",
+        "Unsecured loan for registered businesses for working capital or expansion. Loan amount ranges from Rs 5,00,000 to Rs 50,00,000. Tenure ranges from 12 to 48 months. Interest rates range from 14% to 26% per annum.",
+        "Every approved application is assigned a risk grade from A (lowest risk) to E (highest risk). The risk grade determines the interest rate or markup within the product range. Grade E applicants are capped at 50% of the maximum loan amount for the product."
+      ],
+      "reference": "Up to Rs 15,00,000.",
+      "note": "added: Women applicants get this waived under the Udyam scheme.",
+      "kind": "faithfulness",
+      "source": "injected",
+      "answer": "The biggest personal loan you can get is Rs 15,00,000. [1] Women applicants get this waived under the Udyam scheme.",
+      "label": false,
+      "pred": false,
+      "judge_details": {
+        "claims": [
+          {
+            "claim": "The biggest personal loan you can get is Rs 15,00,000.",
+            "evidence": "[1] Loan amount ranges from Rs 50,000 to Rs 15,00,000.",
+            "supported": true
+          },
+          {
+            "claim": "Women applicants get this waived under the Udyam scheme.",
+            "evidence": "",
+            "supported": false
+          }
+        ]
+      },
+      "judge_error": null
+    },
+    {
+      "run": "rag-7b-hybrid",
+      "id": "q10",
+      "question": "What is the longest repayment period for a business term loan?",
+      "contexts": [
+        "Unsecured loan for registered businesses for working capital or expansion. Loan amount ranges from Rs 5,00,000 to Rs 50,00,000. Tenure ranges from 12 to 48 months. Interest rates range from 14% to 26% per annum.",
+        "Supplier invoice financing is repaid as a single bullet payment of the financed amount plus markup on the due date. Early repayment is allowed at any time, and the markup is then charged only for the days actually used, subject to a minimum of 15 days.",
+        "Personal loans and business term loans are disbursed only to the borrower's own verified bank account. Supplier invoice financing is disbursed directly to the approved supplier's verified bank account and never to the merchant.",
+        "Salaried applicants must have at least 1 year of total work experience and at least 6 months with their current employer. Self-employed applicants and businesses must have a business vintage of at least 3 years."
+      ],
+      "reference": "48 months.",
+      "note": "",
+      "kind": "faithfulness",
+      "source": "natural",
+      "answer": "The longest repayment period for a business term loan is 48 months. [1]",
+      "label": true,
+      "pred": true,
+      "judge_details": {
+        "claims": [
+          {
+            "claim": "The longest repayment period for a business term loan is 48 months.",
+            "evidence": "[1] Tenure ranges from 12 to 48 months.",
+            "supported": true
+          }
+        ]
+      },
+      "judge_error": null
+    },
+    {
+      "run": "rag-7b-hybrid",
+      "id": "q10",
+      "question": "What is the longest repayment period for a business term loan?",
+      "contexts": [
+        "Unsecured loan for registered businesses for working capital or expansion. Loan amount ranges from Rs 5,00,000 to Rs 50,00,000. Tenure ranges from 12 to 48 months. Interest rates range from 14% to 26% per annum.",
+        "Supplier invoice financing is repaid as a single bullet payment of the financed amount plus markup on the due date. Early repayment is allowed at any time, and the markup is then charged only for the days actually used, subject to a minimum of 15 days.",
+        "Personal loans and business term loans are disbursed only to the borrower's own verified bank account. Supplier invoice financing is disbursed directly to the approved supplier's verified bank account and never to the merchant.",
+        "Salaried applicants must have at least 1 year of total work experience and at least 6 months with their current employer. Self-employed applicants and businesses must have a business vintage of at least 3 years."
+      ],
+      "reference": "48 months.",
+      "note": "",
+      "kind": "correctness",
+      "source": "natural",
+      "answer": "The longest repayment period for a business term loan is 48 months. [1]",
+      "label": true,
+      "pred": true,
+      "judge_details": {
+        "facts": [
+          {
+            "fact": "The longest repayment period for a business term loan is 48 months.",
+            "answer_says": "The longest repayment period for a business term loan is 48 months.",
+            "status": "stated",
+            "essential": true
+          }
+        ]
+      },
+      "judge_error": null
+    },
+    {
+      "run": "rag-7b-hybrid",
+      "id": "q10",
+      "question": "What is the longest repayment period for a business term loan?",
+      "contexts": [
+        "Unsecured loan for registered businesses for working capital or expansion. Loan amount ranges from Rs 5,00,000 to Rs 50,00,000. Tenure ranges from 12 to 48 months. Interest rates range from 14% to 26% per annum.",
+        "Supplier invoice financing is repaid as a single bullet payment of the financed amount plus markup on the due date. Early repayment is allowed at any time, and the markup is then charged only for the days actually used, subject to a minimum of 15 days.",
+        "Personal loans and business term loans are disbursed only to the borrower's own verified bank account. Supplier invoice financing is disbursed directly to the approved supplier's verified bank account and never to the merchant.",
+        "Salaried applicants must have at least 1 year of total work experience and at least 6 months with their current employer. Self-employed applicants and businesses must have a business vintage of at least 3 years."
+      ],
+      "reference": "48 months.",
+      "note": "48 -> 72",
+      "kind": "correctness",
+      "source": "number_swap",
+      "answer": "The longest repayment period for a business term loan is 72 months. [1]",
+      "label": false,
+      "pred": false,
+      "judge_details": {
+        "facts": [
+          {
+            "fact": "The longest repayment period for a business term loan is 48 months.",
+            "answer_says": "The longest repayment period for a business term loan is 72 months.",
+            "status": "contradicted",
+            "essential": true
+          }
+        ]
+      },
+      "judge_error": null
+    },
+    {
+      "run": "rag-7b-hybrid",
+      "id": "q11",
+      "question": "What percentage of an invoice can supplier financing cover?",
+      "contexts": [
+        "Short-term financing in which Northwind Credit pays the merchant's approved supplier directly and the merchant repays the amount plus a fixed markup. Financing covers up to 80% of the invoice value. Tenure ranges from 30 to 120 days. The markup ranges from 1.5% to 3% per month, fixed at the time of approval and charged on the financed amount. The supplier must be onboarded and verified before the first financing request.",
+        "Supplier invoice financing is repaid as a single bullet payment of the financed amount plus markup on the due date. Early repayment is allowed at any time, and the markup is then charged only for the days actually used, subject to a minimum of 15 days.",
+        "Before a supplier can receive invoice financing, the supplier must provide its GSTIN, PAN, and a cancelled cheque or bank letter, and its bank account must pass the penny-drop test.",
+        "Personal loans and business term loans are disbursed only to the borrower's own verified bank account. Supplier invoice financing is disbursed directly to the approved supplier's verified bank account and never to the merchant."
+      ],
+      "reference": "Up to 80% of the invoice value.",
+      "note": "80 -> 82",
+      "kind": "faithfulness",
+      "source": "number_swap",
+      "answer": "Supplier financing can cover up to 82% of the invoice value. [1]",
+      "label": false,
+      "pred": false,
+      "judge_details": {
+        "claims": [
+          {
+            "claim": "Supplier financing can cover up to 82% of the invoice value.",
+            "evidence": "Financing covers up to 80% of the invoice value.",
+            "supported": false
+          }
+        ]
+      },
+      "judge_error": null
+    },
+    {
+      "run": "rag-7b-hybrid",
+      "id": "q12",
+      "question": "How much markup is charged on a markup loan?",
+      "contexts": [
+        "Short-term financing in which Northwind Credit pays the merchant's approved supplier directly and the merchant repays the amount plus a fixed markup. Financing covers up to 80% of the invoice value. Tenure ranges from 30 to 120 days. The markup ranges from 1.5% to 3% per month, fixed at the time of approval and charged on the financed amount. The supplier must be onboarded and verified before the first financing request.",
+        "Supplier invoice financing is repaid as a single bullet payment of the financed amount plus markup on the due date. Early repayment is allowed at any time, and the markup is then charged only for the days actually used, subject to a minimum of 15 days.",
+        "Unsecured loan for registered businesses for working capital or expansion. Loan amount ranges from Rs 5,00,000 to Rs 50,00,000. Tenure ranges from 12 to 48 months. Interest rates range from 14% to 26% per annum.",
+        "Every approved application is assigned a risk grade from A (lowest risk) to E (highest risk). The risk grade determines the interest rate or markup within the product range. Grade E applicants are capped at 50% of the maximum loan amount for the product."
+      ],
+      "reference": "Between 1.5% and 3% per month on the financed amount.",
+      "note": "",
+      "kind": "faithfulness",
+      "source": "natural",
+      "answer": "The markup charged on a markup loan ranges from 1.5% to 3% per month, fixed at the time of approval and charged on the financed amount. [1]",
+      "label": true,
+      "pred": true,
+      "judge_details": {
+        "claims": [
+          {
+            "claim": "The markup charged on a markup loan ranges from 1.5% to 3% per month.",
+            "evidence": "[1] The markup ranges from 1.5% to 3% per month, fixed at the time of approval and charged on the financed amount.",
+            "supported": true
+          },
+          {
+            "claim": "The markup is fixed at the time of approval.",
+            "evidence": "[1] The markup ranges from 1.5% to 3% per month, fixed at the time of approval and charged on the financed amount.",
+            "supported": true
+          },
+          {
+            "claim": "The markup is charged on the financed amount.",
+            "evidence": "[1] The markup ranges from 1.5% to 3% per month, fixed at the time of approval and charged on the financed amount.",
+            "supported": true
+          }
+        ]
+      },
+      "judge_error": null
+    },
+    {
+      "run": "rag-7b-hybrid",
+      "id": "q13",
+      "question": "Is there a limit on loan amount for the riskiest borrowers?",
+      "contexts": [
+        "Part-prepayment and full foreclosure are allowed only after 6 EMIs have been paid. Part-prepayment is limited to 25% of the outstanding principal once per financial year and carries no charge. Foreclosure carries a charge of 4% of the outstanding principal. Individual borrowers on a floating interest rate pay no foreclosure charge.",
+        "Borrowers facing genuine financial hardship, such as job loss or medical emergency, may request a moratorium of up to 3 months. Interest continues to accrue during the moratorium and is added to the outstanding principal. A borrower may receive at most one moratorium during the loan tenure.",
+        "Unsecured loan for registered businesses for working capital or expansion. Loan amount ranges from Rs 5,00,000 to Rs 50,00,000. Tenure ranges from 12 to 48 months. Interest rates range from 14% to 26% per annum.",
+        "Every approved application is assigned a risk grade from A (lowest risk) to E (highest risk). The risk grade determines the interest rate or markup within the product range. Grade E applicants are capped at 50% of the maximum loan amount for the product."
+      ],
+      "reference": "Yes. Grade E (highest-risk) borrowers are capped at 50% of the product's maximum loan amount.",
+      "note": "",
+      "kind": "correctness",
+      "source": "natural",
+      "answer": "Yes, for the riskiest borrowers (risk grade E), there is a limit on the loan amount, which is capped at 50% of the maximum loan amount for the product. [4]",
+      "label": true,
+      "pred": true,
+      "judge_details": {
+        "facts": [
+          {
+            "fact": "Yes, there is a limit on loan amount for the riskiest borrowers.",
+            "answer_says": "Yes, for the riskiest borrowers (risk grade E), there is a limit on the loan amount, which is capped at 50% of the maximum loan amount for the product.",
+            "status": "stated",
+            "essential": true
+          },
+          {
+            "fact": "The riskiest borrowers are grade E.",
+            "answer_says": "for the riskiest borrowers (risk grade E)",
+            "status": "stated",
+            "essential": true
+          },
+          {
+            "fact": "The limit is 50% of the product's maximum loan amount.",
+            "answer_says": "capped at 50% of the maximum loan amount for the product.",
+            "status": "stated",
+            "essential": true
+          }
+        ]
+      },
+      "judge_error": null
+    },
+    {
+      "run": "rag-7b-hybrid",
+      "id": "q13",
+      "question": "Is there a limit on loan amount for the riskiest borrowers?",
+      "contexts": [
+        "Part-prepayment and full foreclosure are allowed only after 6 EMIs have been paid. Part-prepayment is limited to 25% of the outstanding principal once per financial year and carries no charge. Foreclosure carries a charge of 4% of the outstanding principal. Individual borrowers on a floating interest rate pay no foreclosure charge.",
+        "Borrowers facing genuine financial hardship, such as job loss or medical emergency, may request a moratorium of up to 3 months. Interest continues to accrue during the moratorium and is added to the outstanding principal. A borrower may receive at most one moratorium during the loan tenure.",
+        "Unsecured loan for registered businesses for working capital or expansion. Loan amount ranges from Rs 5,00,000 to Rs 50,00,000. Tenure ranges from 12 to 48 months. Interest rates range from 14% to 26% per annum.",
+        "Every approved application is assigned a risk grade from A (lowest risk) to E (highest risk). The risk grade determines the interest rate or markup within the product range. Grade E applicants are capped at 50% of the maximum loan amount for the product."
+      ],
+      "reference": "Yes. Grade E (highest-risk) borrowers are capped at 50% of the product's maximum loan amount.",
+      "note": "50 -> 75",
+      "kind": "correctness",
+      "source": "number_swap",
+      "answer": "Yes, for the riskiest borrowers (risk grade E), there is a limit on the loan amount, which is capped at 75% of the maximum loan amount for the product. [4]",
+      "label": false,
+      "pred": false,
+      "judge_details": {
+        "facts": [
+          {
+            "fact": "Yes, there is a limit on loan amount for the riskiest borrowers.",
+            "answer_says": "Yes, for the riskiest borrowers (risk grade E), there is a limit on the loan amount.",
+            "status": "stated",
+            "essential": true
+          },
+          {
+            "fact": "The limit is capped at 50% of the product's maximum loan amount.",
+            "answer_says": "which is capped at 75% of the maximum loan amount for the product.",
+            "status": "contradicted",
+            "essential": true
+          }
+        ]
+      },
+      "judge_error": null
+    },
+    {
+      "run": "rag-7b-hybrid",
+      "id": "q13",
+      "question": "Is there a limit on loan amount for the riskiest borrowers?",
+      "contexts": [
+        "Part-prepayment and full foreclosure are allowed only after 6 EMIs have been paid. Part-prepayment is limited to 25% of the outstanding principal once per financial year and carries no charge. Foreclosure carries a charge of 4% of the outstanding principal. Individual borrowers on a floating interest rate pay no foreclosure charge.",
+        "Borrowers facing genuine financial hardship, such as job loss or medical emergency, may request a moratorium of up to 3 months. Interest continues to accrue during the moratorium and is added to the outstanding principal. A borrower may receive at most one moratorium during the loan tenure.",
+        "Unsecured loan for registered businesses for working capital or expansion. Loan amount ranges from Rs 5,00,000 to Rs 50,00,000. Tenure ranges from 12 to 48 months. Interest rates range from 14% to 26% per annum.",
+        "Every approved application is assigned a risk grade from A (lowest risk) to E (highest risk). The risk grade determines the interest rate or markup within the product range. Grade E applicants are capped at 50% of the maximum loan amount for the product."
+      ],
+      "reference": "Yes. Grade E (highest-risk) borrowers are capped at 50% of the product's maximum loan amount.",
+      "note": "added: Senior citizens above 60 are given priority processing.",
+      "kind": "faithfulness",
+      "source": "injected",
+      "answer": "Yes, for the riskiest borrowers (risk grade E), there is a limit on the loan amount, which is capped at 50% of the maximum loan amount for the product. [4] Senior citizens above 60 are given priority processing.",
+      "label": false,
+      "pred": false,
+      "judge_details": {
+        "claims": [
+          {
+            "claim": "There is a limit on loan amount for the riskiest borrowers.",
+            "evidence": "Grade E applicants are capped at 50% of the maximum loan amount for the product. [3]",
+            "supported": true
+          },
+          {
+            "claim": "The limit for the riskiest borrowers is capped at 50% of the maximum loan amount for the product.",
+            "evidence": "Grade E applicants are capped at 50% of the maximum loan amount for the product. [3]",
+            "supported": true
+          },
+          {
+            "claim": "The riskiest borrowers are risk grade E.",
+            "evidence": "Grade E applicants are capped at 50% of the maximum loan amount for the product. [3]",
+            "supported": true
+          },
+          {
+            "claim": "Senior citizens above 60 are given priority processing.",
+            "evidence": "",
+            "supported": false
+          }
+        ]
+      },
+      "judge_error": null
+    },
+    {
+      "run": "rag-7b-hybrid",
+      "id": "q15",
+      "question": "Until what time can I complete my request to get same-day disbursement?",
+      "contexts": [
+        "Loans are disbursed within 2 business days after the loan agreement is e-signed. Requests completed before the 3:00 PM IST cut-off are processed the same business day. Requests completed after the cut-off are processed on the next business day.",
+        "Borrowers facing genuine financial hardship, such as job loss or medical emergency, may request a moratorium of up to 3 months. Interest continues to accrue during the moratorium and is added to the outstanding principal. A borrower may receive at most one moratorium during the loan tenure.",
+        "If a disbursement fails, for example because of an invalid account or a bank outage, the system retries automatically up to 3 times at 2-hour intervals. After 3 failed attempts the disbursement is moved to manual review by the operations team, and the borrower is notified by SMS and email.",
+        "A grace period of 3 days applies after the EMI date. After the grace period, a late payment charge of 2% per month is levied on the overdue amount. A bounce charge of Rs 500 applies each time an auto-debit fails because of insufficient funds."
+      ],
+      "reference": "Before the 3:00 PM IST cut-off.",
+      "note": "",
+      "kind": "faithfulness",
+      "source": "natural",
+      "answer": "You can complete your request to get a same-day disbursement until 3:00 PM IST. [1]",
+      "label": true,
+      "pred": true,
+      "judge_details": {
+        "claims": [
+          {
+            "claim": "You can complete your request to get a same-day disbursement until 3:00 PM IST.",
+            "evidence": "[1] Requests completed before the 3:00 PM IST cut-off are processed the same business day.",
+            "supported": true
+          }
+        ]
+      },
+      "judge_error": null
+    },
+    {
+      "run": "rag-7b-hybrid",
+      "id": "q16",
+      "question": "How do you check that my bank account is correct before sending money?",
+      "contexts": [
+        "Funds are disbursed only after the loan agreement has been e-signed, all KYC checks have passed, and the beneficiary bank account has been verified through a penny-drop test. A penny-drop test deposits Rs 1 into the account and confirms that the account holder name matches the borrower or the approved supplier.",
+        "Before a supplier can receive invoice financing, the supplier must provide its GSTIN, PAN, and a cancelled cheque or bank letter, and its bank account must pass the penny-drop test.",
+        "If a disbursement fails, for example because of an invalid account or a bank outage, the system retries automatically up to 3 times at 2-hour intervals. After 3 failed attempts the disbursement is moved to manual review by the operations team, and the borrower is notified by SMS and email.",
+        "Personal loans and business term loans are disbursed only to the borrower's own verified bank account. Supplier invoice financing is disbursed directly to the approved supplier's verified bank account and never to the merchant."
+      ],
+      "reference": "With a penny-drop test: Rs 1 is deposited into the account and the account holder's name is matched.",
+      "note": "",
+      "kind": "correctness",
+      "source": "natural",
+      "answer": "Your bank account is verified through a penny-drop test, where Rs 1 is deposited into the account to confirm that the account holder name matches the borrower or the approved supplier. [1]",
+      "label": true,
+      "pred": true,
+      "judge_details": {
+        "facts": [
+          {
+            "fact": "Rs 1 is deposited into the account",
+            "answer_says": "Rs 1 is deposited into the account",
+            "status": "stated",
+            "essential": true
+          },
+          {
+            "fact": "The account holder's name is matched",
+            "answer_says": "the account holder name matches the borrower or the approved supplier",
+            "status": "stated",
+            "essential": true
+          }
+        ]
+      },
+      "judge_error": null
+    },
+    {
+      "run": "rag-7b-hybrid",
+      "id": "q17",
+      "question": "What happens if the money transfer to my account fails?",
+      "contexts": [
+        "If a disbursement fails, for example because of an invalid account or a bank outage, the system retries automatically up to 3 times at 2-hour intervals. After 3 failed attempts the disbursement is moved to manual review by the operations team, and the borrower is notified by SMS and email.",
+        "Funds are disbursed only after the loan agreement has been e-signed, all KYC checks have passed, and the beneficiary bank account has been verified through a penny-drop test. A penny-drop test deposits Rs 1 into the account and confirms that the account holder name matches the borrower or the approved supplier.",
+        "A grace period of 3 days applies after the EMI date. After the grace period, a late payment charge of 2% per month is levied on the overdue amount. A bounce charge of Rs 500 applies each time an auto-debit fails because of insufficient funds.",
+        "Personal loans and business term loans are disbursed only to the borrower's own verified bank account. Supplier invoice financing is disbursed directly to the approved supplier's verified bank account and never to the merchant."
+      ],
+      "reference": "The system retries up to 3 times at 2-hour intervals; after that the disbursement goes to manual review by the operations team and the borrower is notified.",
+      "note": "3 -> 5",
+      "kind": "correctness",
+      "source": "number_swap",
+      "answer": "If the money transfer to your account fails, the system will retry up to 5 times at 2-hour intervals. If it fails 3 times, the disbursement will be reviewed manually by the operations team, and you will be notified by SMS and email. [1]",
+      "label": false,
+      "pred": false,
+      "judge_details": {
+        "facts": [
+          {
+            "fact": "The system retries up to 3 times at 2-hour intervals.",
+            "answer_says": "The system will retry up to 5 times at 2-hour intervals.",
+            "status": "contradicted",
+            "essential": true
+          },
+          {
+            "fact": "After 3 retries, the disbursement goes to manual review by the operations team.",
+            "answer_says": "If it fails 3 times, the disbursement will be reviewed manually by the operations team.",
+            "status": "stated",
+            "essential": true
+          },
+          {
+            "fact": "The borrower is notified.",
+            "answer_says": "You will be notified by SMS and email.",
+            "status": "stated",
+            "essential": true
+          }
+        ]
+      },
+      "judge_error": null
+    },
+    {
+      "run": "rag-7b-hybrid",
+      "id": "q18",
+      "question": "Above what amount does a payout need two approvers?",
+      "contexts": [
+        "Disbursements above Rs 25,00,000 require dual approval from two authorised credit officers before release.",
+        "A processing fee of 2% of the loan amount, subject to a minimum of Rs 1,999, is deducted from the disbursed amount. GST at 18% applies to the processing fee.",
+        "Part-prepayment and full foreclosure are allowed only after 6 EMIs have been paid. Part-prepayment is limited to 25% of the outstanding principal once per financial year and carries no charge. Foreclosure carries a charge of 4% of the outstanding principal. Individual borrowers on a floating interest rate pay no foreclosure charge.",
+        "Short-term financing in which Northwind Credit pays the merchant's approved supplier directly and the merchant repays the amount plus a fixed markup. Financing covers up to 80% of the invoice value. Tenure ranges from 30 to 120 days. The markup ranges from 1.5% to 3% per month, fixed at the time of approval and charged on the financed amount. The supplier must be onboarded and verified before the first financing request."
+      ],
+      "reference": "Above Rs 25,00,000.",
+      "note": "",
+      "kind": "faithfulness",
+      "source": "natural",
+      "answer": "A payout needs two approvers for amounts above Rs 25,00,000. [1]",
+      "label": true,
+      "pred": true,
+      "judge_details": {
+        "claims": [
+          {
+            "claim": "A payout needs two approvers for amounts above Rs 25,00,000.",
+            "evidence": "[1] Disbursements above Rs 25,00,000 require dual approval from two authorised credit officers before release.",
+            "supported": true
+          }
+        ]
+      },
+      "judge_error": null
+    },
+    {
+      "run": "rag-7b-hybrid",
+      "id": "q18",
+      "question": "Above what amount does a payout need two approvers?",
+      "contexts": [
+        "Disbursements above Rs 25,00,000 require dual approval from two authorised credit officers before release.",
+        "A processing fee of 2% of the loan amount, subject to a minimum of Rs 1,999, is deducted from the disbursed amount. GST at 18% applies to the processing fee.",
+        "Part-prepayment and full foreclosure are allowed only after 6 EMIs have been paid. Part-prepayment is limited to 25% of the outstanding principal once per financial year and carries no charge. Foreclosure carries a charge of 4% of the outstanding principal. Individual borrowers on a floating interest rate pay no foreclosure charge.",
+        "Short-term financing in which Northwind Credit pays the merchant's approved supplier directly and the merchant repays the amount plus a fixed markup. Financing covers up to 80% of the invoice value. Tenure ranges from 30 to 120 days. The markup ranges from 1.5% to 3% per month, fixed at the time of approval and charged on the financed amount. The supplier must be onboarded and verified before the first financing request."
+      ],
+      "reference": "Above Rs 25,00,000.",
+      "note": "",
+      "kind": "correctness",
+      "source": "natural",
+      "answer": "A payout needs two approvers for amounts above Rs 25,00,000. [1]",
+      "label": true,
+      "pred": true,
+      "judge_details": {
+        "facts": [
+          {
+            "fact": "Above what amount does a payout need two approvers?",
+            "answer_says": "A payout needs two approvers for amounts above Rs 25,00,000.",
+            "status": "stated",
+            "essential": true
+          }
+        ]
+      },
+      "judge_error": null
+    },
+    {
+      "run": "rag-7b-hybrid",
+      "id": "q18",
+      "question": "Above what amount does a payout need two approvers?",
+      "contexts": [
+        "Disbursements above Rs 25,00,000 require dual approval from two authorised credit officers before release.",
+        "A processing fee of 2% of the loan amount, subject to a minimum of Rs 1,999, is deducted from the disbursed amount. GST at 18% applies to the processing fee.",
+        "Part-prepayment and full foreclosure are allowed only after 6 EMIs have been paid. Part-prepayment is limited to 25% of the outstanding principal once per financial year and carries no charge. Foreclosure carries a charge of 4% of the outstanding principal. Individual borrowers on a floating interest rate pay no foreclosure charge.",
+        "Short-term financing in which Northwind Credit pays the merchant's approved supplier directly and the merchant repays the amount plus a fixed markup. Financing covers up to 80% of the invoice value. Tenure ranges from 30 to 120 days. The markup ranges from 1.5% to 3% per month, fixed at the time of approval and charged on the financed amount. The supplier must be onboarded and verified before the first financing request."
+      ],
+      "reference": "Above Rs 25,00,000.",
+      "note": "above -> below",
+      "kind": "faithfulness",
+      "source": "flip",
+      "answer": "A payout needs two approvers for amounts below Rs 25,00,000. [1]",
+      "label": false,
+      "pred": true,
+      "judge_details": {
+        "claims": []
+      },
+      "judge_error": null
+    },
+    {
+      "run": "rag-7b-hybrid",
+      "id": "q19",
+      "question": "Can supplier invoice financing be paid into the merchant's own account?",
+      "contexts": [
+        "Personal loans and business term loans are disbursed only to the borrower's own verified bank account. Supplier invoice financing is disbursed directly to the approved supplier's verified bank account and never to the merchant.",
+        "Short-term financing in which Northwind Credit pays the merchant's approved supplier directly and the merchant repays the amount plus a fixed markup. Financing covers up to 80% of the invoice value. Tenure ranges from 30 to 120 days. The markup ranges from 1.5% to 3% per month, fixed at the time of approval and charged on the financed amount. The supplier must be onboarded and verified before the first financing request.",
+        "Supplier invoice financing is repaid as a single bullet payment of the financed amount plus markup on the due date. Early repayment is allowed at any time, and the markup is then charged only for the days actually used, subject to a minimum of 15 days.",
+        "Before a supplier can receive invoice financing, the supplier must provide its GSTIN, PAN, and a cancelled cheque or bank letter, and its bank account must pass the penny-drop test."
+      ],
+      "reference": "No. It is paid directly to the approved supplier's verified account, never to the merchant.",
+      "note": "added: A gold-backed top-up loan is also available for this.",
+      "kind": "faithfulness",
+      "source": "injected",
+      "answer": "No, supplier invoice financing cannot be paid into the merchant's own account; it is always disbursed directly to the approved supplier's verified bank account. [1] A gold-backed top-up loan is also available for this.",
+      "label": false,
+      "pred": false,
+      "judge_details": {
+        "claims": [
+          {
+            "claim": "No, supplier invoice financing cannot be paid into the merchant's own account",
+            "evidence": "[1] Supplier invoice financing is disbursed directly to the approved supplier's verified bank account and never to the merchant.",
+            "supported": true
+          },
+          {
+            "claim": "It is always disbursed directly to the approved supplier's verified bank account",
+            "evidence": "[1] Supplier invoice financing is disbursed directly to the approved supplier's verified bank account and never to the merchant.",
+            "supported": true
+          },
+          {
+            "claim": "A gold-backed top-up loan is also available for this",
+            "evidence": "",
+            "supported": false
+          }
+        ]
+      },
+      "judge_error": null
+    },
+    {
+      "run": "rag-7b-hybrid",
+      "id": "q20",
+      "question": "What processing fee do you charge?",
+      "contexts": [
+        "A processing fee of 2% of the loan amount, subject to a minimum of Rs 1,999, is deducted from the disbursed amount. GST at 18% applies to the processing fee.",
+        "Part-prepayment and full foreclosure are allowed only after 6 EMIs have been paid. Part-prepayment is limited to 25% of the outstanding principal once per financial year and carries no charge. Foreclosure carries a charge of 4% of the outstanding principal. Individual borrowers on a floating interest rate pay no foreclosure charge.",
+        "A grace period of 3 days applies after the EMI date. After the grace period, a late payment charge of 2% per month is levied on the overdue amount. A bounce charge of Rs 500 applies each time an auto-debit fails because of insufficient funds.",
+        "Borrowers facing genuine financial hardship, such as job loss or medical emergency, may request a moratorium of up to 3 months. Interest continues to accrue during the moratorium and is added to the outstanding principal. A borrower may receive at most one moratorium during the loan tenure."
+      ],
+      "reference": "2% of the loan amount, with a minimum of Rs 1,999.",
+      "note": "",
+      "kind": "faithfulness",
+      "source": "natural",
+      "answer": "We charge a processing fee of 2% of the loan amount, with a minimum of Rs 1,999, and GST at 18% is applied to this fee. [1]",
+      "label": true,
+      "pred": true,
+      "judge_details": {
+        "claims": [
+          {
+            "claim": "We charge a processing fee of 2% of the loan amount",
+            "evidence": "[1] A processing fee of 2% of the loan amount, subject to a minimum of Rs 1,999, is deducted from the disbursed amount.",
+            "supported": true
+          },
+          {
+            "claim": "GST at 18% is applied to this fee",
+            "evidence": "[1] GST at 18% applies to the processing fee.",
+            "supported": true
+          },
+          {
+            "claim": "The minimum fee is Rs 1,999",
+            "evidence": "[1] A processing fee of 2% of the loan amount, subject to a minimum of Rs 1,999, is deducted from the disbursed amount.",
+            "supported": true
+          }
+        ]
+      },
+      "judge_error": null
+    },
+    {
+      "run": "rag-7b-hybrid",
+      "id": "q20",
+      "question": "What processing fee do you charge?",
+      "contexts": [
+        "A processing fee of 2% of the loan amount, subject to a minimum of Rs 1,999, is deducted from the disbursed amount. GST at 18% applies to the processing fee.",
+        "Part-prepayment and full foreclosure are allowed only after 6 EMIs have been paid. Part-prepayment is limited to 25% of the outstanding principal once per financial year and carries no charge. Foreclosure carries a charge of 4% of the outstanding principal. Individual borrowers on a floating interest rate pay no foreclosure charge.",
+        "A grace period of 3 days applies after the EMI date. After the grace period, a late payment charge of 2% per month is levied on the overdue amount. A bounce charge of Rs 500 applies each time an auto-debit fails because of insufficient funds.",
+        "Borrowers facing genuine financial hardship, such as job loss or medical emergency, may request a moratorium of up to 3 months. Interest continues to accrue during the moratorium and is added to the outstanding principal. A borrower may receive at most one moratorium during the loan tenure."
+      ],
+      "reference": "2% of the loan amount, with a minimum of Rs 1,999.",
+      "note": "1,999 -> 2,999",
+      "kind": "faithfulness",
+      "source": "number_swap",
+      "answer": "We charge a processing fee of 2% of the loan amount, with a minimum of Rs 2,999, and GST at 18% is applied to this fee. [1]",
+      "label": false,
+      "pred": false,
+      "judge_details": {
+        "claims": [
+          {
+            "claim": "We charge a processing fee of 2% of the loan amount",
+            "evidence": "[1] A processing fee of 2% of the loan amount, subject to a minimum of Rs 1,999, is deducted from the disbursed amount.",
+            "supported": true
+          },
+          {
+            "claim": "with a minimum of Rs 2,999",
+            "evidence": "",
+            "supported": false
+          },
+          {
+            "claim": "and GST at 18% is applied to this fee",
+            "evidence": "[1] GST at 18% applies to the processing fee.",
+            "supported": true
+          }
+        ]
+      },
+      "judge_error": null
+    },
+    {
+      "run": "rag-7b-hybrid",
+      "id": "q21",
+      "question": "What is the penalty if my auto-debit bounces?",
+      "contexts": [
+        "A grace period of 3 days applies after the EMI date. After the grace period, a late payment charge of 2% per month is levied on the overdue amount. A bounce charge of Rs 500 applies each time an auto-debit fails because of insufficient funds.",
+        "If a disbursement fails, for example because of an invalid account or a bank outage, the system retries automatically up to 3 times at 2-hour intervals. After 3 failed attempts the disbursement is moved to manual review by the operations team, and the borrower is notified by SMS and email.",
+        "Borrowers may choose the 5th, 10th or 15th of each month as their EMI date. EMIs are collected through an auto-debit (NACH or UPI AutoPay) mandate registered before disbursement.",
+        "Overdue accounts are classified by days past due (DPD): SMA-0 for 1 to 30 DPD, SMA-1 for 31 to 60 DPD, and SMA-2 for 61 to 90 DPD. An account overdue for more than 90 days is classified as a non-performing asset (NPA)."
+      ],
+      "reference": "Rs 500 each time an auto-debit fails because of insufficient funds.",
+      "note": "",
+      "kind": "correctness",
+      "source": "natural",
+      "answer": "A bounce charge of Rs 500 is applied each time an auto-debit fails due to insufficient funds. [1]",
+      "label": true,
+      "pred": true,
+      "judge_details": {
+        "facts": [
+          {
+            "fact": "Rs 500 each time an auto-debit fails because of insufficient funds.",
+            "answer_says": "A bounce charge of Rs 500 is applied each time an auto-debit fails due to insufficient funds.",
+            "status": "stated",
+            "essential": true
+          }
+        ]
+      },
+      "judge_error": null
+    },
+    {
+      "run": "rag-7b-hybrid",
+      "id": "q21",
+      "question": "What is the penalty if my auto-debit bounces?",
+      "contexts": [
+        "A grace period of 3 days applies after the EMI date. After the grace period, a late payment charge of 2% per month is levied on the overdue amount. A bounce charge of Rs 500 applies each time an auto-debit fails because of insufficient funds.",
+        "If a disbursement fails, for example because of an invalid account or a bank outage, the system retries automatically up to 3 times at 2-hour intervals. After 3 failed attempts the disbursement is moved to manual review by the operations team, and the borrower is notified by SMS and email.",
+        "Borrowers may choose the 5th, 10th or 15th of each month as their EMI date. EMIs are collected through an auto-debit (NACH or UPI AutoPay) mandate registered before disbursement.",
+        "Overdue accounts are classified by days past due (DPD): SMA-0 for 1 to 30 DPD, SMA-1 for 31 to 60 DPD, and SMA-2 for 61 to 90 DPD. An account overdue for more than 90 days is classified as a non-performing asset (NPA)."
+      ],
+      "reference": "Rs 500 each time an auto-debit fails because of insufficient funds.",
+      "note": "500 -> 750",
+      "kind": "correctness",
+      "source": "number_swap",
+      "answer": "A bounce charge of Rs 750 is applied each time an auto-debit fails due to insufficient funds. [1]",
+      "label": false,
+      "pred": false,
+      "judge_details": {
+        "facts": [
+          {
+            "fact": "Rs 500 each time an auto-debit fails because of insufficient funds.",
+            "answer_says": "A bounce charge of Rs 750 is applied each time an auto-debit fails due to insufficient funds.",
+            "status": "contradicted",
+            "essential": true
+          }
+        ]
+      },
+      "judge_error": null
+    },
+    {
+      "run": "rag-7b-hybrid",
+      "id": "q23",
+      "question": "How much do I pay to foreclose a fixed-rate loan?",
+      "contexts": [
+        "Part-prepayment and full foreclosure are allowed only after 6 EMIs have been paid. Part-prepayment is limited to 25% of the outstanding principal once per financial year and carries no charge. Foreclosure carries a charge of 4% of the outstanding principal. Individual borrowers on a floating interest rate pay no foreclosure charge.",
+        "Unsecured loan for salaried and self-employed individuals. Loan amount ranges from Rs 50,000 to Rs 15,00,000. Tenure ranges from 12 to 60 months. Interest rates range from 11.5% to 24% per annum on a reducing-balance basis, based on the applicant's risk grade.",
+        "Unsecured loan for registered businesses for working capital or expansion. Loan amount ranges from Rs 5,00,000 to Rs 50,00,000. Tenure ranges from 12 to 48 months. Interest rates range from 14% to 26% per annum.",
+        "A processing fee of 2% of the loan amount, subject to a minimum of Rs 1,999, is deducted from the disbursed amount. GST at 18% applies to the processing fee."
+      ],
+      "reference": "4% of the outstanding principal.",
+      "note": "",
+      "kind": "faithfulness",
+      "source": "natural",
+      "answer": "You pay 4% of the outstanding principal to foreclose a fixed-rate loan. [1]",
+      "label": true,
+      "pred": true,
+      "judge_details": {
+        "claims": [
+          {
+            "claim": "You pay 4% of the outstanding principal to foreclose a fixed-rate loan.",
+            "evidence": "[1] Foreclosure carries a charge of 4% of the outstanding principal.",
+            "supported": true
+          }
+        ]
+      },
+      "judge_error": null
+    },
+    {
+      "run": "rag-7b-hybrid",
+      "id": "q24",
+      "question": "Which dates can I pick for my EMI?",
+      "contexts": [
+        "Borrowers may choose the 5th, 10th or 15th of each month as their EMI date. EMIs are collected through an auto-debit (NACH or UPI AutoPay) mandate registered before disbursement.",
+        "A grace period of 3 days applies after the EMI date. After the grace period, a late payment charge of 2% per month is levied on the overdue amount. A bounce charge of Rs 500 applies each time an auto-debit fails because of insufficient funds.",
+        "The fixed obligation to income ratio (FOIR) including the proposed EMI must not exceed 50% of net monthly income. For applicants earning more than Rs 1,00,000 per month, the FOIR limit is relaxed to 60%.",
+        "Loans are disbursed within 2 business days after the loan agreement is e-signed. Requests completed before the 3:00 PM IST cut-off are processed the same business day. Requests completed after the cut-off are processed on the next business day."
+      ],
+      "reference": "The 5th, 10th or 15th of the month.",
+      "note": "",
+      "kind": "correctness",
+      "source": "natural",
+      "answer": "You can choose the 5th, 10th, or 15th of each month as your EMI date. [1]",
+      "label": true,
+      "pred": true,
+      "judge_details": {
+        "facts": [
+          {
+            "fact": "The 5th, 10th or 15th of the month.",
+            "answer_says": "You can choose the 5th, 10th, or 15th of each month as your EMI date.",
+            "status": "stated",
+            "essential": true
+          }
+        ]
+      },
+      "judge_error": null
+    },
+    {
+      "run": "rag-7b-hybrid",
+      "id": "q24",
+      "question": "Which dates can I pick for my EMI?",
+      "contexts": [
+        "Borrowers may choose the 5th, 10th or 15th of each month as their EMI date. EMIs are collected through an auto-debit (NACH or UPI AutoPay) mandate registered before disbursement.",
+        "A grace period of 3 days applies after the EMI date. After the grace period, a late payment charge of 2% per month is levied on the overdue amount. A bounce charge of Rs 500 applies each time an auto-debit fails because of insufficient funds.",
+        "The fixed obligation to income ratio (FOIR) including the proposed EMI must not exceed 50% of net monthly income. For applicants earning more than Rs 1,00,000 per month, the FOIR limit is relaxed to 60%.",
+        "Loans are disbursed within 2 business days after the loan agreement is e-signed. Requests completed before the 3:00 PM IST cut-off are processed the same business day. Requests completed after the cut-off are processed on the next business day."
+      ],
+      "reference": "The 5th, 10th or 15th of the month.",
+      "note": "5 -> 8",
+      "kind": "correctness",
+      "source": "number_swap",
+      "answer": "You can choose the 8th, 10th, or 15th of each month as your EMI date. [1]",
+      "label": false,
+      "pred": false,
+      "judge_details": {
+        "facts": [
+          {
+            "fact": "The 5th, 10th or 15th of the month.",
+            "answer_says": "You can choose the 8th, 10th, or 15th of each month as your EMI date.",
+            "status": "missing",
+            "essential": true
+          }
+        ]
+      },
+      "judge_error": null
+    },
+    {
+      "run": "rag-7b-hybrid",
+      "id": "q24",
+      "question": "Which dates can I pick for my EMI?",
+      "contexts": [
+        "Borrowers may choose the 5th, 10th or 15th of each month as their EMI date. EMIs are collected through an auto-debit (NACH or UPI AutoPay) mandate registered before disbursement.",
+        "A grace period of 3 days applies after the EMI date. After the grace period, a late payment charge of 2% per month is levied on the overdue amount. A bounce charge of Rs 500 applies each time an auto-debit fails because of insufficient funds.",
+        "The fixed obligation to income ratio (FOIR) including the proposed EMI must not exceed 50% of net monthly income. For applicants earning more than Rs 1,00,000 per month, the FOIR limit is relaxed to 60%.",
+        "Loans are disbursed within 2 business days after the loan agreement is e-signed. Requests completed before the 3:00 PM IST cut-off are processed the same business day. Requests completed after the cut-off are processed on the next business day."
+      ],
+      "reference": "The 5th, 10th or 15th of the month.",
+      "note": "added: Senior citizens above 60 are given priority processing.",
+      "kind": "faithfulness",
+      "source": "injected",
+      "answer": "You can choose the 5th, 10th, or 15th of each month as your EMI date. [1] Senior citizens above 60 are given priority processing.",
+      "label": false,
+      "pred": false,
+      "judge_details": {
+        "claims": [
+          {
+            "claim": "You can choose the 5th, 10th, or 15th of each month as your EMI date.",
+            "evidence": "[1] Borrowers may choose the 5th, 10th or 15th of each month as their EMI date.",
+            "supported": true
+          },
+          {
+            "claim": "Senior citizens above 60 are given priority processing.",
+            "evidence": "",
+            "supported": false
+          }
+        ]
+      },
+      "judge_error": null
+    },
+    {
+      "run": "rag-7b-hybrid",
+      "id": "q26",
+      "question": "How many months of payslips do salaried applicants submit?",
+      "contexts": [
+        "Salaried applicants must submit salary slips for the last 3 months and bank statements for the last 6 months showing salary credits.",
+        "Salaried applicants must have at least 1 year of total work experience and at least 6 months with their current employer. Self-employed applicants and businesses must have a business vintage of at least 3 years.",
+        "Salaried applicants must have a minimum net monthly income of Rs 25,000. Self-employed applicants must show a minimum average monthly income of Rs 40,000, computed from the last two years of income tax returns.",
+        "Self-employed applicants must submit income tax returns for the last 2 years and bank statements for the last 12 months. Businesses must additionally submit GST returns for the last 12 months and a certificate of registration or incorporation."
+      ],
+      "reference": "Salary slips for the last 3 months.",
+      "note": "",
+      "kind": "faithfulness",
+      "source": "natural",
+      "answer": "Salaried applicants submit salary slips for the last 3 months. [1]",
+      "label": true,
+      "pred": true,
+      "judge_details": {
+        "claims": [
+          {
+            "claim": "Salaried applicants submit salary slips for the last 3 months.",
+            "evidence": "[1] Salaried applicants must submit salary slips for the last 3 months and bank statements for the last 6 months showing salary credits.",
+            "supported": true
+          }
+        ]
+      },
+      "judge_error": null
+    },
+    {
+      "run": "rag-7b-hybrid",
+      "id": "q26",
+      "question": "How many months of payslips do salaried applicants submit?",
+      "contexts": [
+        "Salaried applicants must submit salary slips for the last 3 months and bank statements for the last 6 months showing salary credits.",
+        "Salaried applicants must have at least 1 year of total work experience and at least 6 months with their current employer. Self-employed applicants and businesses must have a business vintage of at least 3 years.",
+        "Salaried applicants must have a minimum net monthly income of Rs 25,000. Self-employed applicants must show a minimum average monthly income of Rs 40,000, computed from the last two years of income tax returns.",
+        "Self-employed applicants must submit income tax returns for the last 2 years and bank statements for the last 12 months. Businesses must additionally submit GST returns for the last 12 months and a certificate of registration or incorporation."
+      ],
+      "reference": "Salary slips for the last 3 months.",
+      "note": "3 -> 5",
+      "kind": "correctness",
+      "source": "number_swap",
+      "answer": "Salaried applicants submit salary slips for the last 5 months. [1]",
+      "label": false,
+      "pred": false,
+      "judge_details": {
+        "facts": [
+          {
+            "fact": "Salary slips for the last 3 months.",
+            "answer_says": "Salaried applicants submit salary slips for the last 5 months.",
+            "status": "contradicted",
+            "essential": true
+          }
+        ]
+      },
+      "judge_error": null
+    },
+    {
+      "run": "rag-7b-hybrid",
+      "id": "q27",
+      "question": "For how many months of GST returns does a business need to provide?",
+      "contexts": [
+        "Self-employed applicants must submit income tax returns for the last 2 years and bank statements for the last 12 months. Businesses must additionally submit GST returns for the last 12 months and a certificate of registration or incorporation.",
+        "Salaried applicants must have at least 1 year of total work experience and at least 6 months with their current employer. Self-employed applicants and businesses must have a business vintage of at least 3 years.",
+        "Unsecured loan for registered businesses for working capital or expansion. Loan amount ranges from Rs 5,00,000 to Rs 50,00,000. Tenure ranges from 12 to 48 months. Interest rates range from 14% to 26% per annum.",
+        "A processing fee of 2% of the loan amount, subject to a minimum of Rs 1,999, is deducted from the disbursed amount. GST at 18% applies to the processing fee."
+      ],
+      "reference": "The last 12 months.",
+      "note": "",
+      "kind": "correctness",
+      "source": "natural",
+      "answer": "A business needs to provide GST returns for the last 12 months. [1]",
+      "label": true,
+      "pred": true,
+      "judge_details": {
+        "facts": [
+          {
+            "fact": "The last 12 months.",
+            "answer_says": "A business needs to provide GST returns for the last 12 months.",
+            "status": "stated",
+            "essential": true
+          }
+        ]
+      },
+      "judge_error": null
+    },
+    {
+      "run": "rag-7b-hybrid",
+      "id": "q27",
+      "question": "For how many months of GST returns does a business need to provide?",
+      "contexts": [
+        "Self-employed applicants must submit income tax returns for the last 2 years and bank statements for the last 12 months. Businesses must additionally submit GST returns for the last 12 months and a certificate of registration or incorporation.",
+        "Salaried applicants must have at least 1 year of total work experience and at least 6 months with their current employer. Self-employed applicants and businesses must have a business vintage of at least 3 years.",
+        "Unsecured loan for registered businesses for working capital or expansion. Loan amount ranges from Rs 5,00,000 to Rs 50,00,000. Tenure ranges from 12 to 48 months. Interest rates range from 14% to 26% per annum.",
+        "A processing fee of 2% of the loan amount, subject to a minimum of Rs 1,999, is deducted from the disbursed amount. GST at 18% applies to the processing fee."
+      ],
+      "reference": "The last 12 months.",
+      "note": "added: A one-time documentation fee of Rs 750 also applies.",
+      "kind": "faithfulness",
+      "source": "injected",
+      "answer": "A business needs to provide GST returns for the last 12 months. [1] A one-time documentation fee of Rs 750 also applies.",
+      "label": false,
+      "pred": false,
+      "judge_details": {
+        "claims": [
+          {
+            "claim": "A business needs to provide GST returns for the last 12 months.",
+            "evidence": "[1] Businesses must additionally submit GST returns for the last 12 months and a certificate of registration or incorporation.",
+            "supported": true
+          },
+          {
+            "claim": "A one-time documentation fee of Rs 750 also applies.",
+            "evidence": "",
+            "supported": false
+          }
+        ]
+      },
+      "judge_error": null
+    },
+    {
+      "run": "rag-7b-hybrid",
+      "id": "q29",
+      "question": "What documents does a supplier need to give before receiving invoice financing?",
+      "contexts": [
+        "Before a supplier can receive invoice financing, the supplier must provide its GSTIN, PAN, and a cancelled cheque or bank letter, and its bank account must pass the penny-drop test.",
+        "Supplier invoice financing is repaid as a single bullet payment of the financed amount plus markup on the due date. Early repayment is allowed at any time, and the markup is then charged only for the days actually used, subject to a minimum of 15 days.",
+        "Short-term financing in which Northwind Credit pays the merchant's approved supplier directly and the merchant repays the amount plus a fixed markup. Financing covers up to 80% of the invoice value. Tenure ranges from 30 to 120 days. The markup ranges from 1.5% to 3% per month, fixed at the time of approval and charged on the financed amount. The supplier must be onboarded and verified before the first financing request.",
+        "Personal loans and business term loans are disbursed only to the borrower's own verified bank account. Supplier invoice financing is disbursed directly to the approved supplier's verified bank account and never to the merchant."
+      ],
+      "reference": "Its GSTIN, PAN, and a cancelled cheque or bank letter.",
+      "note": "",
+      "kind": "faithfulness",
+      "source": "natural",
+      "answer": "A supplier needs to provide its GSTIN, PAN, and a cancelled cheque or bank letter before receiving invoice financing. Additionally, its bank account must pass the penny-drop test. [1]",
+      "label": true,
+      "pred": true,
+      "judge_details": {
+        "claims": [
+          {
+            "claim": "A supplier needs to provide its GSTIN, PAN, and a cancelled cheque or bank letter before receiving invoice financing.",
+            "evidence": "[1] Before a supplier can receive invoice financing, the supplier must provide its GSTIN, PAN, and a cancelled cheque or bank letter, and its bank account must pass the penny-drop test.",
+            "supported": true
+          },
+          {
+            "claim": "Its bank account must pass the penny-drop test.",
+            "evidence": "[1] Before a supplier can receive invoice financing, the supplier must provide its GSTIN, PAN, and a cancelled cheque or bank letter, and its bank account must pass the penny-drop test.",
+            "supported": true
+          }
+        ]
+      },
+      "judge_error": null
+    },
+    {
+      "run": "rag-7b-hybrid",
+      "id": "q30",
+      "question": "At what times are recovery agents allowed to call me?",
+      "contexts": [
+        "Collection agents must not contact borrowers before 8:00 AM or after 7:00 PM. Agents must carry an authorisation letter and identity card, and must never use threatening or abusive language. All collection calls are recorded.",
+        "Loans may be restructured once, by extending the tenure by up to 12 months, if the borrower's account is not yet classified as an NPA.",
+        "If a disbursement fails, for example because of an invalid account or a bank outage, the system retries automatically up to 3 times at 2-hour intervals. After 3 failed attempts the disbursement is moved to manual review by the operations team, and the borrower is notified by SMS and email.",
+        "Borrowers facing genuine financial hardship, such as job loss or medical emergency, may request a moratorium of up to 3 months. Interest continues to accrue during the moratorium and is added to the outstanding principal. A borrower may receive at most one moratorium during the loan tenure."
+      ],
+      "reference": "Only between 8:00 AM and 7:00 PM.",
+      "note": "",
+      "kind": "correctness",
+      "source": "natural",
+      "answer": "Recovery agents are allowed to call you between 8:00 AM and 7:00 PM. [1]",
+      "label": true,
+      "pred": true,
+      "judge_details": {
+        "facts": [
+          {
+            "fact": "Only between 8:00 AM and 7:00 PM.",
+            "answer_says": "Recovery agents are allowed to call you between 8:00 AM and 7:00 PM.",
+            "status": "stated",
+            "essential": true
+          }
+        ]
+      },
+      "judge_error": null
+    },
+    {
+      "run": "rag-7b-hybrid",
+      "id": "q30",
+      "question": "At what times are recovery agents allowed to call me?",
+      "contexts": [
+        "Collection agents must not contact borrowers before 8:00 AM or after 7:00 PM. Agents must carry an authorisation letter and identity card, and must never use threatening or abusive language. All collection calls are recorded.",
+        "Loans may be restructured once, by extending the tenure by up to 12 months, if the borrower's account is not yet classified as an NPA.",
+        "If a disbursement fails, for example because of an invalid account or a bank outage, the system retries automatically up to 3 times at 2-hour intervals. After 3 failed attempts the disbursement is moved to manual review by the operations team, and the borrower is notified by SMS and email.",
+        "Borrowers facing genuine financial hardship, such as job loss or medical emergency, may request a moratorium of up to 3 months. Interest continues to accrue during the moratorium and is added to the outstanding principal. A borrower may receive at most one moratorium during the loan tenure."
+      ],
+      "reference": "Only between 8:00 AM and 7:00 PM.",
+      "note": "8 -> 10",
+      "kind": "correctness",
+      "source": "number_swap",
+      "answer": "Recovery agents are allowed to call you between 10:00 AM and 7:00 PM. [1]",
+      "label": false,
+      "pred": false,
+      "judge_details": {
+        "facts": [
+          {
+            "fact": "Only between 8:00 AM and 7:00 PM.",
+            "answer_says": "Recovery agents are allowed to call you between 10:00 AM and 7:00 PM.",
+            "status": "contradicted",
+            "essential": true
+          }
+        ]
+      },
+      "judge_error": null
+    },
+    {
+      "run": "rag-7b-hybrid",
+      "id": "q31",
+      "question": "I lost my job. Can I pause my EMIs for a while?",
+      "contexts": [
+        "Borrowers facing genuine financial hardship, such as job loss or medical emergency, may request a moratorium of up to 3 months. Interest continues to accrue during the moratorium and is added to the outstanding principal. A borrower may receive at most one moratorium during the loan tenure.",
+        "Overdue accounts are classified by days past due (DPD): SMA-0 for 1 to 30 DPD, SMA-1 for 31 to 60 DPD, and SMA-2 for 61 to 90 DPD. An account overdue for more than 90 days is classified as a non-performing asset (NPA).",
+        "Borrowers may choose the 5th, 10th or 15th of each month as their EMI date. EMIs are collected through an auto-debit (NACH or UPI AutoPay) mandate registered before disbursement.",
+        "A grace period of 3 days applies after the EMI date. After the grace period, a late payment charge of 2% per month is levied on the overdue amount. A bounce charge of Rs 500 applies each time an auto-debit fails because of insufficient funds."
+      ],
+      "reference": "Yes. A moratorium of up to 3 months can be requested for genuine hardship such as job loss.",
+      "note": "",
+      "kind": "faithfulness",
+      "source": "natural",
+      "answer": "Yes, you can pause your EMIs for up to 3 months if you face genuine financial hardship due to job loss. However, interest will continue to accrue during this period and will be added to your outstanding principal. You are entitled to only one such moratorium during the loan tenure. [1]",
+      "label": true,
+      "pred": true,
+      "judge_details": {
+        "claims": [
+          {
+            "claim": "Yes, you can pause your EMIs for up to 3 months if you face genuine financial hardship due to job loss.",
+            "evidence": "[1] Borrowers facing genuine financial hardship, such as job loss or medical emergency, may request a moratorium of up to 3 months.",
+            "supported": true
+          },
+          {
+            "claim": "Interest will continue to accrue during this period and will be added to your outstanding principal.",
+            "evidence": "[1] Interest continues to accrue during the moratorium and is added to the outstanding principal.",
+            "supported": true
+          },
+          {
+            "claim": "You are entitled to only one such moratorium during the loan tenure.",
+            "evidence": "[1] A borrower may receive at most one moratorium during the loan tenure.",
+            "supported": true
+          }
+        ]
+      },
+      "judge_error": null
+    },
+    {
+      "run": "rag-7b-hybrid",
+      "id": "q31",
+      "question": "I lost my job. Can I pause my EMIs for a while?",
+      "contexts": [
+        "Borrowers facing genuine financial hardship, such as job loss or medical emergency, may request a moratorium of up to 3 months. Interest continues to accrue during the moratorium and is added to the outstanding principal. A borrower may receive at most one moratorium during the loan tenure.",
+        "Overdue accounts are classified by days past due (DPD): SMA-0 for 1 to 30 DPD, SMA-1 for 31 to 60 DPD, and SMA-2 for 61 to 90 DPD. An account overdue for more than 90 days is classified as a non-performing asset (NPA).",
+        "Borrowers may choose the 5th, 10th or 15th of each month as their EMI date. EMIs are collected through an auto-debit (NACH or UPI AutoPay) mandate registered before disbursement.",
+        "A grace period of 3 days applies after the EMI date. After the grace period, a late payment charge of 2% per month is levied on the overdue amount. A bounce charge of Rs 500 applies each time an auto-debit fails because of insufficient funds."
+      ],
+      "reference": "Yes. A moratorium of up to 3 months can be requested for genuine hardship such as job loss.",
+      "note": "added: A gold-backed top-up loan is also available for this.",
+      "kind": "faithfulness",
+      "source": "injected",
+      "answer": "Yes, you can pause your EMIs for up to 3 months if you face genuine financial hardship due to job loss. However, interest will continue to accrue during this period and will be added to your outstanding principal. You are entitled to only one such moratorium during the loan tenure. [1] A gold-backed top-up loan is also available for this.",
+      "label": false,
+      "pred": false,
+      "judge_details": {
+        "claims": [
+          {
+            "claim": "Yes, you can pause your EMIs for up to 3 months if you face genuine financial hardship due to job loss.",
+            "evidence": "[1] Borrowers facing genuine financial hardship, such as job loss or medical emergency, may request a moratorium of up to 3 months.",
+            "supported": true
+          },
+          {
+            "claim": "However, interest will continue to accrue during this period and will be added to your outstanding principal.",
+            "evidence": "[1] Interest continues to accrue during the moratorium and is added to the outstanding principal.",
+            "supported": true
+          },
+          {
+            "claim": "You are entitled to only one such moratorium during the loan tenure.",
+            "evidence": "[1] A borrower may receive at most one moratorium during the loan tenure.",
+            "supported": true
+          },
+          {
+            "claim": "A gold-backed top-up loan is also available for this.",
+            "evidence": "",
+            "supported": false
+          }
+        ]
+      },
+      "judge_error": null
+    },
+    {
+      "run": "rag-7b-hybrid",
+      "id": "q33",
+      "question": "How long does the grievance officer have to resolve my complaint?",
+      "contexts": [
+        "Complaints should first be raised with customer support, which responds within 7 days. Unresolved complaints may be escalated to the Grievance Redressal Officer, who must resolve them within 30 days. If the complaint is still unresolved, the borrower may approach the RBI Ombudsman.",
+        "A grace period of 3 days applies after the EMI date. After the grace period, a late payment charge of 2% per month is levied on the overdue amount. A bounce charge of Rs 500 applies each time an auto-debit fails because of insufficient funds.",
+        "Borrowers facing genuine financial hardship, such as job loss or medical emergency, may request a moratorium of up to 3 months. Interest continues to accrue during the moratorium and is added to the outstanding principal. A borrower may receive at most one moratorium during the loan tenure.",
+        "Overdue accounts are classified by days past due (DPD): SMA-0 for 1 to 30 DPD, SMA-1 for 31 to 60 DPD, and SMA-2 for 61 to 90 DPD. An account overdue for more than 90 days is classified as a non-performing asset (NPA)."
+      ],
+      "reference": "30 days.",
+      "note": "",
+      "kind": "correctness",
+      "source": "natural",
+      "answer": "The Grievance Redressal Officer must resolve your complaint within 30 days. [1]",
+      "label": true,
+      "pred": true,
+      "judge_details": {
+        "facts": [
+          {
+            "fact": "30 days",
+            "answer_says": "The Grievance Redressal Officer must resolve your complaint within 30 days.",
+            "status": "stated",
+            "essential": true
+          }
+        ]
+      },
+      "judge_error": null
+    },
+    {
+      "run": "rag-7b-hybrid",
+      "id": "q33",
+      "question": "How long does the grievance officer have to resolve my complaint?",
+      "contexts": [
+        "Complaints should first be raised with customer support, which responds within 7 days. Unresolved complaints may be escalated to the Grievance Redressal Officer, who must resolve them within 30 days. If the complaint is still unresolved, the borrower may approach the RBI Ombudsman.",
+        "A grace period of 3 days applies after the EMI date. After the grace period, a late payment charge of 2% per month is levied on the overdue amount. A bounce charge of Rs 500 applies each time an auto-debit fails because of insufficient funds.",
+        "Borrowers facing genuine financial hardship, such as job loss or medical emergency, may request a moratorium of up to 3 months. Interest continues to accrue during the moratorium and is added to the outstanding principal. A borrower may receive at most one moratorium during the loan tenure.",
+        "Overdue accounts are classified by days past due (DPD): SMA-0 for 1 to 30 DPD, SMA-1 for 31 to 60 DPD, and SMA-2 for 61 to 90 DPD. An account overdue for more than 90 days is classified as a non-performing asset (NPA)."
+      ],
+      "reference": "30 days.",
+      "note": "30 -> 45",
+      "kind": "faithfulness",
+      "source": "number_swap",
+      "answer": "The Grievance Redressal Officer must resolve your complaint within 45 days. [1]",
+      "label": false,
+      "pred": false,
+      "judge_details": {
+        "claims": [
+          {
+            "claim": "The Grievance Redressal Officer must resolve your complaint within 45 days.",
+            "evidence": "",
+            "supported": false
+          }
+        ]
+      },
+      "judge_error": null
+    },
+    {
+      "run": "rag-7b-hybrid",
+      "id": "q34",
+      "question": "Can I close my loan early, and what will it cost?",
+      "contexts": [
+        "Supplier invoice financing is repaid as a single bullet payment of the financed amount plus markup on the due date. Early repayment is allowed at any time, and the markup is then charged only for the days actually used, subject to a minimum of 15 days.",
+        "A processing fee of 2% of the loan amount, subject to a minimum of Rs 1,999, is deducted from the disbursed amount. GST at 18% applies to the processing fee.",
+        "Unsecured loan for salaried and self-employed individuals. Loan amount ranges from Rs 50,000 to Rs 15,00,000. Tenure ranges from 12 to 60 months. Interest rates range from 11.5% to 24% per annum on a reducing-balance basis, based on the applicant's risk grade.",
+        "Part-prepayment and full foreclosure are allowed only after 6 EMIs have been paid. Part-prepayment is limited to 25% of the outstanding principal once per financial year and carries no charge. Foreclosure carries a charge of 4% of the outstanding principal. Individual borrowers on a floating interest rate pay no foreclosure charge."
+      ],
+      "reference": "Yes, after 6 EMIs have been paid. Foreclosure costs 4% of the outstanding principal.",
+      "note": "6 -> 9",
+      "kind": "correctness",
+      "source": "number_swap",
+      "answer": "Yes, you can close your loan early, but you must first make 9 EMIs. For partial prepayment, you can pay up to 25% of the outstanding principal once per financial year with no additional charge. Full foreclosure will incur a charge of 4% of the outstanding principal. [4]",
+      "label": false,
+      "pred": false,
+      "judge_details": {
+        "facts": [
+          {
+            "fact": "Can the loan be closed early?",
+            "answer_says": "Yes, you can close your loan early, but you must first make 9 EMIs.",
+            "status": "contradicted",
+            "essential": true
+          },
+          {
+            "fact": "What is the condition for early closure?",
+            "answer_says": "You must first make 9 EMIs.",
+            "status": "missing",
+            "essential": true
+          },
+          {
+            "fact": "What is the cost for full foreclosure?",
+            "answer_says": "Full foreclosure will incur a charge of 4% of the outstanding principal.",
+            "status": "stated",
+            "essential": true
+          },
+          {
+            "fact": "Is there a charge for partial prepayment?",
+            "answer_says": "For partial prepayment, you can pay up to 25% of the outstanding principal once per financial year with no additional charge.",
+            "status": "stated",
+            "essential": false
+          }
+        ]
+      },
+      "judge_error": null
+    },
+    {
+      "run": "rag-7b-no-rewrite",
+      "id": "q34",
+      "question": "Can I close my loan early, and what will it cost?",
+      "contexts": [
+        "Unsecured loan for salaried and self-employed individuals. Loan amount ranges from Rs 50,000 to Rs 15,00,000. Tenure ranges from 12 to 60 months. Interest rates range from 11.5% to 24% per annum on a reducing-balance basis, based on the applicant's risk grade.",
+        "Supplier invoice financing is repaid as a single bullet payment of the financed amount plus markup on the due date. Early repayment is allowed at any time, and the markup is then charged only for the days actually used, subject to a minimum of 15 days.",
+        "A processing fee of 2% of the loan amount, subject to a minimum of Rs 1,999, is deducted from the disbursed amount. GST at 18% applies to the processing fee.",
+        "Loans are disbursed within 2 business days after the loan agreement is e-signed. Requests completed before the 3:00 PM IST cut-off are processed the same business day. Requests completed after the cut-off are processed on the next business day."
+      ],
+      "reference": "Yes, after 6 EMIs have been paid. Foreclosure costs 4% of the outstanding principal.",
+      "note": "retrieval missed the foreclosure section; the answer applies the markup-loan '15 days' rule to an ordinary loan",
+      "kind": "faithfulness",
+      "source": "natural",
+      "answer": "Yes, you can close your loan early. However, you will be charged a markup for the days the loan was active, with a minimum charge of 15 days. [2]",
+      "label": false,
+      "pred": true,
+      "judge_details": {
+        "claims": [
+          {
+            "claim": "Yes, you can close your loan early.",
+            "evidence": "Early repayment is allowed at any time, and the markup is then charged only for the days actually used, subject to a minimum of 15 days.",
+            "supported": true
+          },
+          {
+            "claim": "You will be charged a markup for the days the loan was active.",
+            "evidence": "Early repayment is allowed at any time, and the markup is then charged only for the days actually used, subject to a minimum of 15 days.",
+            "supported": true
+          },
+          {
+            "claim": "There is a minimum charge of 15 days.",
+            "evidence": "Early repayment is allowed at any time, and the markup is then charged only for the days actually used, subject to a minimum of 15 days.",
+            "supported": true
+          }
+        ]
+      },
+      "judge_error": null
+    },
+    {
+      "run": "rag-7b-no-rewrite",
+      "id": "q34",
+      "question": "Can I close my loan early, and what will it cost?",
+      "contexts": [
+        "Unsecured loan for salaried and self-employed individuals. Loan amount ranges from Rs 50,000 to Rs 15,00,000. Tenure ranges from 12 to 60 months. Interest rates range from 11.5% to 24% per annum on a reducing-balance basis, based on the applicant's risk grade.",
+        "Supplier invoice financing is repaid as a single bullet payment of the financed amount plus markup on the due date. Early repayment is allowed at any time, and the markup is then charged only for the days actually used, subject to a minimum of 15 days.",
+        "A processing fee of 2% of the loan amount, subject to a minimum of Rs 1,999, is deducted from the disbursed amount. GST at 18% applies to the processing fee.",
+        "Loans are disbursed within 2 business days after the loan agreement is e-signed. Requests completed before the 3:00 PM IST cut-off are processed the same business day. Requests completed after the cut-off are processed on the next business day."
+      ],
+      "reference": "Yes, after 6 EMIs have been paid. Foreclosure costs 4% of the outstanding principal.",
+      "note": "retrieval missed the foreclosure section; the answer applies the markup-loan '15 days' rule to an ordinary loan",
+      "kind": "correctness",
+      "source": "natural",
+      "answer": "Yes, you can close your loan early. However, you will be charged a markup for the days the loan was active, with a minimum charge of 15 days. [2]",
+      "label": false,
+      "pred": false,
+      "judge_details": {
+        "facts": [
+          {
+            "fact": "Can the loan be closed early?",
+            "answer_says": "Yes, you can close your loan early.",
+            "status": "stated",
+            "essential": true
+          },
+          {
+            "fact": "When can the loan be closed early?",
+            "answer_says": "However, you will be charged a markup for the days the loan was active, with a minimum charge of 15 days. [2]",
+            "status": "contradicted",
+            "essential": false
+          },
+          {
+            "fact": "What is the cost of closing the loan early?",
+            "answer_says": "However, you will be charged a markup for the days the loan was active, with a minimum charge of 15 days. [2]",
+            "status": "contradicted",
+            "essential": true
+          }
+        ]
+      },
+      "judge_error": null
+    },
+    {
+      "run": "rag-7b-no-rewrite",
+      "id": "q01",
+      "question": "How old do I need to be to apply for a loan?",
+      "contexts": [
+        "Applicants must be at least 21 years old at the time of application. The applicant's age at loan maturity must not exceed 60 years for salaried applicants and 65 years for self-employed applicants.",
+        "Unsecured loan for registered businesses for working capital or expansion. Loan amount ranges from Rs 5,00,000 to Rs 50,00,000. Tenure ranges from 12 to 48 months. Interest rates range from 14% to 26% per annum.",
+        "Unsecured loan for salaried and self-employed individuals. Loan amount ranges from Rs 50,000 to Rs 15,00,000. Tenure ranges from 12 to 60 months. Interest rates range from 11.5% to 24% per annum on a reducing-balance basis, based on the applicant's risk grade.",
+        "Salaried applicants must have at least 1 year of total work experience and at least 6 months with their current employer. Self-employed applicants and businesses must have a business vintage of at least 3 years."
+      ],
+      "reference": "Applicants must be at least 21 years old.",
+      "note": "adds correct maturity-age detail",
+      "kind": "faithfulness",
+      "source": "natural",
+      "answer": "You must be at least 21 years old to apply for a loan. For salaried applicants, your age at loan maturity should not exceed 60 years, while for self-employed applicants, it should not exceed 65 years. [1]",
+      "label": true,
+      "pred": true,
+      "judge_details": {
+        "claims": [
+          {
+            "claim": "You must be at least 21 years old to apply for a loan.",
+            "evidence": "[1] Applicants must be at least 21 years old at the time of application.",
+            "supported": true
+          },
+          {
+            "claim": "For salaried applicants, your age at loan maturity should not exceed 60 years.",
+            "evidence": "[1] The applicant's age at loan maturity must not exceed 60 years for salaried applicants.",
+            "supported": true
+          },
+          {
+            "claim": "For self-employed applicants, it should not exceed 65 years.",
+            "evidence": "[1] The applicant's age at loan maturity must not exceed 65 years for self-employed applicants.",
+            "supported": true
+          }
+        ]
+      },
+      "judge_error": null
+    },
+    {
+      "run": "rag-7b-no-rewrite",
+      "id": "q08",
+      "question": "I earn 1.5 lakh a month. What share of my income can go to EMIs?",
+      "contexts": [
+        "Borrowers may choose the 5th, 10th or 15th of each month as their EMI date. EMIs are collected through an auto-debit (NACH or UPI AutoPay) mandate registered before disbursement.",
+        "The fixed obligation to income ratio (FOIR) including the proposed EMI must not exceed 50% of net monthly income. For applicants earning more than Rs 1,00,000 per month, the FOIR limit is relaxed to 60%.",
+        "Salaried applicants must have a minimum net monthly income of Rs 25,000. Self-employed applicants must show a minimum average monthly income of Rs 40,000, computed from the last two years of income tax returns.",
+        "Self-employed applicants must submit income tax returns for the last 2 years and bank statements for the last 12 months. Businesses must additionally submit GST returns for the last 12 months and a certificate of registration or incorporation."
+      ],
+      "reference": "Because the income is above Rs 1,00,000 a month, total EMIs (FOIR) can be up to 60% of net monthly income.",
+      "note": "",
+      "kind": "correctness",
+      "source": "natural",
+      "answer": "Since you earn Rs 1.5 lakh a month, which is more than Rs 1,00,000, the maximum share of your income that can go to EMIs is 60%. [2]",
+      "label": true,
+      "pred": true,
+      "judge_details": {
+        "facts": [
+          {
+            "fact": "The income is above Rs 1,00,000 a month.",
+            "answer_says": "Since you earn Rs 1.5 lakh a month, which is more than Rs 1,00,000",
+            "status": "stated",
+            "essential": true
+          },
+          {
+            "fact": "The maximum share of income that can go to EMIs is 60%.",
+            "answer_says": "the maximum share of your income that can go to EMIs is 60%",
+            "status": "stated",
+            "essential": true
+          }
+        ]
+      },
+      "judge_error": null
+    },
+    {
+      "run": "rag-7b-no-rewrite",
+      "id": "q17",
+      "question": "What happens if the money transfer to my account fails?",
+      "contexts": [
+        "If a disbursement fails, for example because of an invalid account or a bank outage, the system retries automatically up to 3 times at 2-hour intervals. After 3 failed attempts the disbursement is moved to manual review by the operations team, and the borrower is notified by SMS and email.",
+        "Funds are disbursed only after the loan agreement has been e-signed, all KYC checks have passed, and the beneficiary bank account has been verified through a penny-drop test. A penny-drop test deposits Rs 1 into the account and confirms that the account holder name matches the borrower or the approved supplier.",
+        "A grace period of 3 days applies after the EMI date. After the grace period, a late payment charge of 2% per month is levied on the overdue amount. A bounce charge of Rs 500 applies each time an auto-debit fails because of insufficient funds.",
+        "Before a supplier can receive invoice financing, the supplier must provide its GSTIN, PAN, and a cancelled cheque or bank letter, and its bank account must pass the penny-drop test."
+      ],
+      "reference": "The system retries up to 3 times at 2-hour intervals; after that the disbursement goes to manual review by the operations team and the borrower is notified.",
+      "note": "3 -> 5",
+      "kind": "correctness",
+      "source": "number_swap",
+      "answer": "If the money transfer to your account fails, the system will retry the transfer up to 5 times, with each retry 2 hours apart. If all three attempts fail, the transfer will be reviewed manually by the operations team, and you will be notified via SMS and email. [1]",
+      "label": false,
+      "pred": false,
+      "judge_details": {
+        "facts": [
+          {
+            "fact": "The system retries up to 3 times at 2-hour intervals",
+            "answer_says": "The system will retry the transfer up to 5 times, with each retry 2 hours apart.",
+            "status": "contradicted",
+            "essential": true
+          },
+          {
+            "fact": "After 3 failed attempts, the disbursement goes to manual review by the operations team",
+            "answer_says": "If all three attempts fail, the transfer will be reviewed manually by the operations team.",
+            "status": "stated",
+            "essential": true
+          },
+          {
+            "fact": "The borrower is notified",
+            "answer_says": "you will be notified via SMS and email.",
+            "status": "stated",
+            "essential": false
+          }
+        ]
+      },
+      "judge_error": null
+    },
+    {
+      "run": "rag-7b-no-rewrite",
+      "id": "q17",
+      "question": "What happens if the money transfer to my account fails?",
+      "contexts": [
+        "If a disbursement fails, for example because of an invalid account or a bank outage, the system retries automatically up to 3 times at 2-hour intervals. After 3 failed attempts the disbursement is moved to manual review by the operations team, and the borrower is notified by SMS and email.",
+        "Funds are disbursed only after the loan agreement has been e-signed, all KYC checks have passed, and the beneficiary bank account has been verified through a penny-drop test. A penny-drop test deposits Rs 1 into the account and confirms that the account holder name matches the borrower or the approved supplier.",
+        "A grace period of 3 days applies after the EMI date. After the grace period, a late payment charge of 2% per month is levied on the overdue amount. A bounce charge of Rs 500 applies each time an auto-debit fails because of insufficient funds.",
+        "Before a supplier can receive invoice financing, the supplier must provide its GSTIN, PAN, and a cancelled cheque or bank letter, and its bank account must pass the penny-drop test."
+      ],
+      "reference": "The system retries up to 3 times at 2-hour intervals; after that the disbursement goes to manual review by the operations team and the borrower is notified.",
+      "note": "up to -> at least",
+      "kind": "faithfulness",
+      "source": "flip",
+      "answer": "If the money transfer to your account fails, the system will retry the transfer at least 3 times, with each retry 2 hours apart. If all three attempts fail, the transfer will be reviewed manually by the operations team, and you will be notified via SMS and email. [1]",
+      "label": false,
+      "pred": true,
+      "judge_details": {
+        "claims": [
+          {
+            "claim": "The system will retry the transfer at least 3 times.",
+            "evidence": "If a disbursement fails, for example because of an invalid account or a bank outage, the system retries automatically up to 3 times at 2-hour intervals.",
+            "supported": true
+          },
+          {
+            "claim": "Each retry is 2 hours apart.",
+            "evidence": "If a disbursement fails, for example because of an invalid account or a bank outage, the system retries automatically up to 3 times at 2-hour intervals.",
+            "supported": true
+          },
+          {
+            "claim": "If all three attempts fail, the transfer will be reviewed manually by the operations team.",
+            "evidence": "After 3 failed attempts the disbursement is moved to manual review by the operations team, and the borrower is notified by SMS and email.",
+            "supported": true
+          },
+          {
+            "claim": "You will be notified via SMS and email.",
+            "evidence": "After 3 failed attempts the disbursement is moved to manual review by the operations team, and the borrower is notified by SMS and email.",
+            "supported": true
+          }
+        ]
+      },
+      "judge_error": null
+    },
+    {
+      "run": "rag-7b-no-rewrite",
+      "id": "q22",
+      "question": "When am I allowed to close my loan early?",
+      "contexts": [
+        "Collection agents must not contact borrowers before 8:00 AM or after 7:00 PM. Agents must carry an authorisation letter and identity card, and must never use threatening or abusive language. All collection calls are recorded.",
+        "Applicants must be at least 21 years old at the time of application. The applicant's age at loan maturity must not exceed 60 years for salaried applicants and 65 years for self-employed applicants.",
+        "Part-prepayment and full foreclosure are allowed only after 6 EMIs have been paid. Part-prepayment is limited to 25% of the outstanding principal once per financial year and carries no charge. Foreclosure carries a charge of 4% of the outstanding principal. Individual borrowers on a floating interest rate pay no foreclosure charge.",
+        "Loans are disbursed within 2 business days after the loan agreement is e-signed. Requests completed before the 3:00 PM IST cut-off are processed the same business day. Requests completed after the cut-off are processed on the next business day."
+      ],
+      "reference": "Only after 6 EMIs have been paid.",
+      "note": "",
+      "kind": "faithfulness",
+      "source": "natural",
+      "answer": "You are allowed to close your loan early after making 6 EMIs, but part-prepayment is limited to 25% of the outstanding principal once per financial year and there is no charge for this. Full foreclosure carries a charge of 4% of the outstanding principal. [3]",
+      "label": true,
+      "pred": true,
+      "judge_details": {
+        "claims": [
+          {
+            "claim": "You are allowed to close your loan early after making 6 EMIs.",
+            "evidence": "[3] Part-prepayment and full foreclosure are allowed only after 6 EMIs have been paid.",
+            "supported": true
+          },
+          {
+            "claim": "Part-prepayment is limited to 25% of the outstanding principal once per financial year and there is no charge for this.",
+            "evidence": "[3] Part-prepayment is limited to 25% of the outstanding principal once per financial year and carries no charge.",
+            "supported": true
+          },
+          {
+            "claim": "Full foreclosure carries a charge of 4% of the outstanding principal.",
+            "evidence": "[3] Foreclosure carries a charge of 4% of the outstanding principal.",
+            "supported": true
+          }
+        ]
+      },
+      "judge_error": null
+    },
+    {
+      "run": "rag-7b-no-rewrite",
+      "id": "q31",
+      "question": "I lost my job. Can I pause my EMIs for a while?",
+      "contexts": [
+        "Borrowers may choose the 5th, 10th or 15th of each month as their EMI date. EMIs are collected through an auto-debit (NACH or UPI AutoPay) mandate registered before disbursement.",
+        "Borrowers facing genuine financial hardship, such as job loss or medical emergency, may request a moratorium of up to 3 months. Interest continues to accrue during the moratorium and is added to the outstanding principal. A borrower may receive at most one moratorium during the loan tenure.",
+        "A grace period of 3 days applies after the EMI date. After the grace period, a late payment charge of 2% per month is levied on the overdue amount. A bounce charge of Rs 500 applies each time an auto-debit fails because of insufficient funds.",
+        "Part-prepayment and full foreclosure are allowed only after 6 EMIs have been paid. Part-prepayment is limited to 25% of the outstanding principal once per financial year and carries no charge. Foreclosure carries a charge of 4% of the outstanding principal. Individual borrowers on a floating interest rate pay no foreclosure charge."
+      ],
+      "reference": "Yes. A moratorium of up to 3 months can be requested for genuine hardship such as job loss.",
+      "note": "",
+      "kind": "correctness",
+      "source": "natural",
+      "answer": "Yes, you can pause your EMIs for up to 3 months due to your job loss, but interest will continue to accrue during this period and be added to your outstanding principal. You can only request one moratorium during the loan tenure. [2]",
+      "label": true,
+      "pred": true,
+      "judge_details": {
+        "facts": [
+          {
+            "fact": "A moratorium of up to 3 months can be requested.",
+            "answer_says": "Yes, you can pause your EMIs for up to 3 months.",
+            "status": "stated",
+            "essential": true
+          },
+          {
+            "fact": "The moratorium is for genuine hardship such as job loss.",
+            "answer_says": "Yes, due to your job loss, but interest will continue to accrue during this period and be added to your outstanding principal.",
+            "status": "stated",
+            "essential": true
+          },
+          {
+            "fact": "Interest continues to accrue during the moratorium period.",
+            "answer_says": "interest will continue to accrue during this period and be added to your outstanding principal.",
+            "status": "stated",
+            "essential": false
+          },
+          {
+            "fact": "There is a limit of one moratorium during the loan tenure.",
+            "answer_says": "You can only request one moratorium during the loan tenure.",
+            "status": "stated",
+            "essential": false
+          }
+        ]
+      },
+      "judge_error": null
+    },
+    {
+      "run": "rag-3b-vector",
+      "id": "q13",
+      "question": "Is there a limit on loan amount for the riskiest borrowers?",
+      "contexts": [
+        "Every approved application is assigned a risk grade from A (lowest risk) to E (highest risk). The risk grade determines the interest rate or markup within the product range. Grade E applicants are capped at 50% of the maximum loan amount for the product.",
+        "The fixed obligation to income ratio (FOIR) including the proposed EMI must not exceed 50% of net monthly income. For applicants earning more than Rs 1,00,000 per month, the FOIR limit is relaxed to 60%.",
+        "Unsecured loan for salaried and self-employed individuals. Loan amount ranges from Rs 50,000 to Rs 15,00,000. Tenure ranges from 12 to 60 months. Interest rates range from 11.5% to 24% per annum on a reducing-balance basis, based on the applicant's risk grade.",
+        "The minimum credit bureau score is 700. Applicants with a score between 650 and 699 may be approved only with a co-applicant whose score is 720 or higher. Applications with a score below 650 are declined automatically. Applicants with no credit history (\"new to credit\") are eligible only for loans up to Rs 1,00,000."
+      ],
+      "reference": "Yes. Grade E (highest-risk) borrowers are capped at 50% of the product's maximum loan amount.",
+      "note": "includes a derived amount (50% of Rs 15,00,000 = Rs 7,50,000) that follows directly from the context",
+      "kind": "faithfulness",
+      "source": "natural",
+      "answer": "Yes, the riskiest borrowers (risk grade E) are capped at 50% of the maximum loan amount for the product. For personal loans, the maximum amount is Rs 15,00,000, so the riskiest borrowers can only receive up to 50% of that, which is Rs 7,50,000.",
+      "label": true,
+      "pred": false,
+      "judge_details": {
+        "claims": [
+          {
+            "claim": "Yes, the riskiest borrowers (risk grade E) are capped at 50% of the maximum loan amount for the product.",
+            "evidence": "[1] The risk grade determines the interest rate or markup within the product range. Grade E applicants are capped at 50% of the maximum loan amount for the product.",
+            "supported": true
+          },
+          {
+            "claim": "For personal loans, the maximum amount is Rs 15,00,000, so the riskiest borrowers can only receive up to 50% of that, which is Rs 7,50,000.",
+            "evidence": "",
+            "supported": false
+          }
+        ]
+      },
+      "judge_error": null
+    },
+    {
+      "run": "rag-3b-vector",
+      "id": "q32",
+      "question": "After how many days overdue does a loan become an NPA?",
+      "contexts": [
+        "Loans may be restructured once, by extending the tenure by up to 12 months, if the borrower's account is not yet classified as an NPA.",
+        "Overdue accounts are classified by days past due (DPD): SMA-0 for 1 to 30 DPD, SMA-1 for 31 to 60 DPD, and SMA-2 for 61 to 90 DPD. An account overdue for more than 90 days is classified as a non-performing asset (NPA).",
+        "Loans are disbursed within 2 business days after the loan agreement is e-signed. Requests completed before the 3:00 PM IST cut-off are processed the same business day. Requests completed after the cut-off are processed on the next business day.",
+        "Borrowers facing genuine financial hardship, such as job loss or medical emergency, may request a moratorium of up to 3 months. Interest continues to accrue during the moratorium and is added to the outstanding principal. A borrower may receive at most one moratorium during the loan tenure."
+      ],
+      "reference": "When it is overdue for more than 90 days.",
+      "note": "90 -> 135",
+      "kind": "correctness",
+      "source": "number_swap",
+      "answer": "A loan becomes an NPA after more than 135 days overdue. [2]",
+      "label": false,
+      "pred": false,
+      "judge_details": {
+        "facts": [
+          {
+            "fact": "When it is overdue for more than 90 days.",
+            "answer_says": "A loan becomes an NPA after more than 135 days overdue.",
+            "status": "contradicted",
+            "essential": true
+          }
+        ]
+      },
+      "judge_error": null
+    },
+    {
+      "run": "rag-3b-vector",
+      "id": "q32",
+      "question": "After how many days overdue does a loan become an NPA?",
+      "contexts": [
+        "Loans may be restructured once, by extending the tenure by up to 12 months, if the borrower's account is not yet classified as an NPA.",
+        "Overdue accounts are classified by days past due (DPD): SMA-0 for 1 to 30 DPD, SMA-1 for 31 to 60 DPD, and SMA-2 for 61 to 90 DPD. An account overdue for more than 90 days is classified as a non-performing asset (NPA).",
+        "Loans are disbursed within 2 business days after the loan agreement is e-signed. Requests completed before the 3:00 PM IST cut-off are processed the same business day. Requests completed after the cut-off are processed on the next business day.",
+        "Borrowers facing genuine financial hardship, such as job loss or medical emergency, may request a moratorium of up to 3 months. Interest continues to accrue during the moratorium and is added to the outstanding principal. A borrower may receive at most one moratorium during the loan tenure."
+      ],
+      "reference": "When it is overdue for more than 90 days.",
+      "note": "added: The branch manager can approve exceptions to this rule.",
+      "kind": "faithfulness",
+      "source": "injected",
+      "answer": "A loan becomes an NPA after more than 90 days overdue. [2] The branch manager can approve exceptions to this rule.",
+      "label": false,
+      "pred": false,
+      "judge_details": {
+        "claims": [
+          {
+            "claim": "A loan becomes an NPA after more than 90 days overdue.",
+            "evidence": "[2] An account overdue for more than 90 days is classified as a non-performing asset (NPA).",
+            "supported": true
+          },
+          {
+            "claim": "The branch manager can approve exceptions to this rule.",
+            "evidence": "",
+            "supported": false
+          }
+        ]
+      },
+      "judge_error": null
+    },
+    {
+      "run": "rag-3b-vector",
+      "id": "q05",
+      "question": "My CIBIL score is 670. Can I still get a loan?",
+      "contexts": [
+        "The minimum credit bureau score is 700. Applicants with a score between 650 and 699 may be approved only with a co-applicant whose score is 720 or higher. Applications with a score below 650 are declined automatically. Applicants with no credit history (\"new to credit\") are eligible only for loans up to Rs 1,00,000.",
+        "Applicants must be at least 21 years old at the time of application. The applicant's age at loan maturity must not exceed 60 years for salaried applicants and 65 years for self-employed applicants.",
+        "Salaried applicants must have at least 1 year of total work experience and at least 6 months with their current employer. Self-employed applicants and businesses must have a business vintage of at least 3 years.",
+        "Unsecured loan for salaried and self-employed individuals. Loan amount ranges from Rs 50,000 to Rs 15,00,000. Tenure ranges from 12 to 60 months. Interest rates range from 11.5% to 24% per annum on a reducing-balance basis, based on the applicant's risk grade."
+      ],
+      "reference": "Yes, but only with a co-applicant whose credit score is 720 or higher, because 670 is in the 650-699 band.",
+      "note": "",
+      "kind": "correctness",
+      "source": "natural",
+      "answer": "Yes, you can still get a loan with a CIBIL score of 670. You would need a co-applicant with a score of 720 or higher to qualify. [1]",
+      "label": true,
+      "pred": true,
+      "judge_details": {
+        "facts": [
+          {
+            "fact": "Yes, but only with a co-applicant whose credit score is 720 or higher",
+            "answer_says": "Yes, you can still get a loan with a CIBIL score of 670. You would need a co-applicant with a score of 720 or higher to qualify.",
+            "status": "stated",
+            "essential": true
+          }
+        ]
+      },
+      "judge_error": null
+    },
+    {
+      "run": "rag-3b-vector",
+      "id": "q31",
+      "question": "I lost my job. Can I pause my EMIs for a while?",
+      "contexts": [
+        "Borrowers may choose the 5th, 10th or 15th of each month as their EMI date. EMIs are collected through an auto-debit (NACH or UPI AutoPay) mandate registered before disbursement.",
+        "A grace period of 3 days applies after the EMI date. After the grace period, a late payment charge of 2% per month is levied on the overdue amount. A bounce charge of Rs 500 applies each time an auto-debit fails because of insufficient funds.",
+        "Borrowers facing genuine financial hardship, such as job loss or medical emergency, may request a moratorium of up to 3 months. Interest continues to accrue during the moratorium and is added to the outstanding principal. A borrower may receive at most one moratorium during the loan tenure.",
+        "Self-employed applicants must submit income tax returns for the last 2 years and bank statements for the last 12 months. Businesses must additionally submit GST returns for the last 12 months and a certificate of registration or incorporation."
+      ],
+      "reference": "Yes. A moratorium of up to 3 months can be requested for genuine hardship such as job loss.",
+      "note": "answer copies the policy text, starting with a stray [3]",
+      "kind": "faithfulness",
+      "source": "natural",
+      "answer": "[3] Borrowers facing genuine financial hardship, such as job loss or medical emergency, may request a moratorium of up to 3 months. Interest continues to accrue during the moratorium and is added to the outstanding principal.",
+      "label": true,
+      "pred": true,
+      "judge_details": {
+        "claims": [
+          {
+            "claim": "Borrowers facing genuine financial hardship, such as job loss or medical emergency, may request a moratorium of up to 3 months.",
+            "evidence": "[3] Borrowers facing genuine financial hardship, such as job loss or medical emergency, may request a moratorium of up to 3 months.",
+            "supported": true
+          },
+          {
+            "claim": "Interest continues to accrue during the moratorium and is added to the outstanding principal.",
+            "evidence": "[3] Interest continues to accrue during the moratorium and is added to the outstanding principal.",
+            "supported": true
+          }
+        ]
+      },
+      "judge_error": null
+    },
+    {
+      "run": "rag-3b-vector",
+      "id": "q31",
+      "question": "I lost my job. Can I pause my EMIs for a while?",
+      "contexts": [
+        "Borrowers may choose the 5th, 10th or 15th of each month as their EMI date. EMIs are collected through an auto-debit (NACH or UPI AutoPay) mandate registered before disbursement.",
+        "A grace period of 3 days applies after the EMI date. After the grace period, a late payment charge of 2% per month is levied on the overdue amount. A bounce charge of Rs 500 applies each time an auto-debit fails because of insufficient funds.",
+        "Borrowers facing genuine financial hardship, such as job loss or medical emergency, may request a moratorium of up to 3 months. Interest continues to accrue during the moratorium and is added to the outstanding principal. A borrower may receive at most one moratorium during the loan tenure.",
+        "Self-employed applicants must submit income tax returns for the last 2 years and bank statements for the last 12 months. Businesses must additionally submit GST returns for the last 12 months and a certificate of registration or incorporation."
+      ],
+      "reference": "Yes. A moratorium of up to 3 months can be requested for genuine hardship such as job loss.",
+      "note": "up to -> at least",
+      "kind": "faithfulness",
+      "source": "flip",
+      "answer": "[3] Borrowers facing genuine financial hardship, such as job loss or medical emergency, may request a moratorium of at least 3 months. Interest continues to accrue during the moratorium and is added to the outstanding principal.",
+      "label": false,
+      "pred": false,
+      "judge_details": {
+        "claims": [
+          {
+            "claim": "Borrowers facing genuine financial hardship, such as job loss or medical emergency, may request a moratorium of at least 3 months.",
+            "evidence": "[3] Borrowers facing genuine financial hardship, such as job loss or medical emergency, may request a moratorium of up to 3 months.",
+            "supported": false
+          },
+          {
+            "claim": "Interest continues to accrue during the moratorium and is added to the outstanding principal.",
+            "evidence": "[3] Interest continues to accrue during the moratorium and is added to the outstanding principal.",
+            "supported": true
+          }
+        ]
+      },
+      "judge_error": null
+    },
+    {
+      "run": "rag-3b-vector",
+      "id": "q20",
+      "question": "What processing fee do you charge?",
+      "contexts": [
+        "A processing fee of 2% of the loan amount, subject to a minimum of Rs 1,999, is deducted from the disbursed amount. GST at 18% applies to the processing fee.",
+        "A grace period of 3 days applies after the EMI date. After the grace period, a late payment charge of 2% per month is levied on the overdue amount. A bounce charge of Rs 500 applies each time an auto-debit fails because of insufficient funds.",
+        "Part-prepayment and full foreclosure are allowed only after 6 EMIs have been paid. Part-prepayment is limited to 25% of the outstanding principal once per financial year and carries no charge. Foreclosure carries a charge of 4% of the outstanding principal. Individual borrowers on a floating interest rate pay no foreclosure charge.",
+        "Overdue accounts are classified by days past due (DPD): SMA-0 for 1 to 30 DPD, SMA-1 for 31 to 60 DPD, and SMA-2 for 61 to 90 DPD. An account overdue for more than 90 days is classified as a non-performing asset (NPA)."
+      ],
+      "reference": "2% of the loan amount, with a minimum of Rs 1,999.",
+      "note": "1,999 -> 2,999",
+      "kind": "correctness",
+      "source": "number_swap",
+      "answer": "We charge a processing fee of 2% of the loan amount, with a minimum of Rs 2,999 deducted from the disbursed amount.",
+      "label": false,
+      "pred": false,
+      "judge_details": {
+        "facts": [
+          {
+            "fact": "2% of the loan amount",
+            "answer_says": "We charge a processing fee of 2% of the loan amount",
+            "status": "stated",
+            "essential": true
+          },
+          {
+            "fact": "minimum of Rs 1,999",
+            "answer_says": "with a minimum of Rs 2,999 deducted from the disbursed amount",
+            "status": "contradicted",
+            "essential": true
+          }
+        ]
+      },
+      "judge_error": null
+    },
+    {
+      "run": "rag-3b-vector",
+      "id": "q19",
+      "question": "Can supplier invoice financing be paid into the merchant's own account?",
+      "contexts": [
+        "Supplier invoice financing is repaid as a single bullet payment of the financed amount plus markup on the due date. Early repayment is allowed at any time, and the markup is then charged only for the days actually used, subject to a minimum of 15 days.",
+        "Personal loans and business term loans are disbursed only to the borrower's own verified bank account. Supplier invoice financing is disbursed directly to the approved supplier's verified bank account and never to the merchant.",
+        "Short-term financing in which Northwind Credit pays the merchant's approved supplier directly and the merchant repays the amount plus a fixed markup. Financing covers up to 80% of the invoice value. Tenure ranges from 30 to 120 days. The markup ranges from 1.5% to 3% per month, fixed at the time of approval and charged on the financed amount. The supplier must be onboarded and verified before the first financing request.",
+        "Before a supplier can receive invoice financing, the supplier must provide its GSTIN, PAN, and a cancelled cheque or bank letter, and its bank account must pass the penny-drop test."
+      ],
+      "reference": "No. It is paid directly to the approved supplier's verified account, never to the merchant.",
+      "note": "",
+      "kind": "correctness",
+      "source": "natural",
+      "answer": "No, supplier invoice financing cannot be paid into the merchant's own account. According to the Disbursement Policy, supplier invoice financing is disbursed directly to the approved supplier's verified bank account and never to the merchant. [2]",
+      "label": true,
+      "pred": true,
+      "judge_details": {
+        "facts": [
+          {
+            "fact": "No. It is paid directly to the approved supplier's verified account, never to the merchant.",
+            "answer_says": "No, supplier invoice financing cannot be paid into the merchant's own account. According to the Disbursement Policy, supplier invoice financing is disbursed directly to the approved supplier's verified bank account and never to the merchant.",
+            "status": "stated",
+            "essential": true
+          }
+        ]
+      },
+      "judge_error": null
+    },
+    {
+      "run": "rag-3b-vector",
+      "id": "q14",
+      "question": "After I sign the agreement, how soon will I get the money?",
+      "contexts": [
+        "Loans are disbursed within 2 business days after the loan agreement is e-signed. Requests completed before the 3:00 PM IST cut-off are processed the same business day. Requests completed after the cut-off are processed on the next business day.",
+        "Funds are disbursed only after the loan agreement has been e-signed, all KYC checks have passed, and the beneficiary bank account has been verified through a penny-drop test. A penny-drop test deposits Rs 1 into the account and confirms that the account holder name matches the borrower or the approved supplier.",
+        "Salaried applicants must submit salary slips for the last 3 months and bank statements for the last 6 months showing salary credits.",
+        "Borrowers may choose the 5th, 10th or 15th of each month as their EMI date. EMIs are collected through an auto-debit (NACH or UPI AutoPay) mandate registered before disbursement."
+      ],
+      "reference": "Within 2 business days of e-signing the agreement.",
+      "note": "",
+      "kind": "faithfulness",
+      "source": "natural",
+      "answer": "After you sign the agreement, you will get the money within 2 business days. Requests completed before the 3:00 PM IST cut-off are processed the same business day.",
+      "label": true,
+      "pred": true,
+      "judge_details": {
+        "claims": [
+          {
+            "claim": "After you sign the agreement, you will get the money within 2 business days.",
+            "evidence": "[1] Loans are disbursed within 2 business days after the loan agreement is e-signed.",
+            "supported": true
+          },
+          {
+            "claim": "Requests completed before the 3:00 PM IST cut-off are processed the same business day.",
+            "evidence": "[1] Requests completed before the 3:00 PM IST cut-off are processed the same business day.",
+            "supported": true
+          }
+        ]
+      },
+      "judge_error": null
+    }
+  ]
+}

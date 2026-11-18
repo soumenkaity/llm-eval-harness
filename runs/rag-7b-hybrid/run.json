@@ -1,0 +1,84 @@
+{
+  "name": "rag-7b-hybrid",
+  "label": "qwen2.5:7b, hybrid retrieval + query rewrite (production config)",
+  "suite": "lending-policy-rag",
+  "target_url": "http://localhost:8000/ask",
+  "recorded_at": "2026-11-18T07:11:42+00:00",
+  "cases": 40,
+  "judge": {
+    "provider": "ollama",
+    "model": "qwen2.5:7b",
+    "base_url": "http://localhost:11434",
+    "num_ctx": 4096,
+    "think": null,
+    "timeout_s": 600,
+    "prompt_versions": {
+      "faithfulness": 1,
+      "correctness": 1
+    }
+  },
+  "scored_at": "2026-11-18T14:47:16+00:00",
+  "scoring_seconds": 58.5,
+  "summary": {
+    "cases": 40,
+    "metrics": {
+      "passed": {
+        "n": 40,
+        "passed": 38,
+        "rate": 0.95,
+        "ci": [
+          0.875,
+          1.0
+        ],
+        "judge_errors": 0
+      },
+      "refusal": {
+        "n": 40,
+        "passed": 40,
+        "rate": 1.0,
+        "ci": [
+          1.0,
+          1.0
+        ],
+        "judge_errors": 0
+      },
+      "facts": {
+        "n": 34,
+        "passed": 34,
+        "rate": 1.0,
+        "ci": [
+          1.0,
+          1.0
+        ],
+        "judge_errors": 0
+      },
+      "correctness": {
+        "n": 34,
+        "passed": 32,
+        "rate": 0.9411764705882353,
+        "ci": [
+          0.8529411764705882,
+          1.0
+        ],
+        "judge_errors": 0
+      },
+      "faithfulness": {
+        "n": 34,
+        "passed": 32,
+        "rate": 0.9411764705882353,
+        "ci": [
+          0.8529411764705882,
+          1.0
+        ],
+        "judge_errors": 0
+      }
+    },
+    "latency_ms": {
+      "p50": 24606.0,
+      "p95": 38998.6
+    },
+    "target_errors": 0,
+    "judge_calls": 68,
+    "judge_cache_hits": 66
+  }
+}

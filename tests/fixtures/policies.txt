@@ -1,0 +1,124 @@
+# Loan Eligibility Policy
+
+Applies to all retail and business loan products offered by Northwind Credit.
+
+## Age Requirements
+
+Applicants must be at least 21 years old at the time of application. The applicant's age at loan maturity must not exceed 60 years for salaried applicants and 65 years for self-employed applicants.
+
+## Income Requirements
+
+Salaried applicants must have a minimum net monthly income of Rs 25,000. Self-employed applicants must show a minimum average monthly income of Rs 40,000, computed from the last two years of income tax returns.
+
+## Credit Score
+
+The minimum credit bureau score is 700. Applicants with a score between 650 and 699 may be approved only with a co-applicant whose score is 720 or higher. Applications with a score below 650 are declined automatically. Applicants with no credit history ("new to credit") are eligible only for loans up to Rs 1,00,000.
+
+## Employment and Business Stability
+
+Salaried applicants must have at least 1 year of total work experience and at least 6 months with their current employer. Self-employed applicants and businesses must have a business vintage of at least 3 years.
+
+## Debt-to-Income Limit
+
+The fixed obligation to income ratio (FOIR) including the proposed EMI must not exceed 50% of net monthly income. For applicants earning more than Rs 1,00,000 per month, the FOIR limit is relaxed to 60%.
+# Loan Products
+
+## Personal Loan
+
+Unsecured loan for salaried and self-employed individuals. Loan amount ranges from Rs 50,000 to Rs 15,00,000. Tenure ranges from 12 to 60 months. Interest rates range from 11.5% to 24% per annum on a reducing-balance basis, based on the applicant's risk grade.
+
+## Business Term Loan
+
+Unsecured loan for registered businesses for working capital or expansion. Loan amount ranges from Rs 5,00,000 to Rs 50,00,000. Tenure ranges from 12 to 48 months. Interest rates range from 14% to 26% per annum.
+
+## Supplier Invoice Financing (Markup Loan)
+
+Short-term financing in which Northwind Credit pays the merchant's approved supplier directly and the merchant repays the amount plus a fixed markup. Financing covers up to 80% of the invoice value. Tenure ranges from 30 to 120 days. The markup ranges from 1.5% to 3% per month, fixed at the time of approval and charged on the financed amount. The supplier must be onboarded and verified before the first financing request.
+
+## Risk Grades
+
+Every approved application is assigned a risk grade from A (lowest risk) to E (highest risk). The risk grade determines the interest rate or markup within the product range. Grade E applicants are capped at 50% of the maximum loan amount for the product.
+# Disbursement Policy
+
+## Pre-Disbursement Checks
+
+Funds are disbursed only after the loan agreement has been e-signed, all KYC checks have passed, and the beneficiary bank account has been verified through a penny-drop test. A penny-drop test deposits Rs 1 into the account and confirms that the account holder name matches the borrower or the approved supplier.
+
+## Disbursement Timelines
+
+Loans are disbursed within 2 business days after the loan agreement is e-signed. Requests completed before the 3:00 PM IST cut-off are processed the same business day. Requests completed after the cut-off are processed on the next business day.
+
+## Beneficiary Rules
+
+Personal loans and business term loans are disbursed only to the borrower's own verified bank account. Supplier invoice financing is disbursed directly to the approved supplier's verified bank account and never to the merchant.
+
+## Approval Limits
+
+Disbursements above Rs 25,00,000 require dual approval from two authorised credit officers before release.
+
+## Failed Disbursements
+
+If a disbursement fails, for example because of an invalid account or a bank outage, the system retries automatically up to 3 times at 2-hour intervals. After 3 failed attempts the disbursement is moved to manual review by the operations team, and the borrower is notified by SMS and email.
+# Repayment and Fees Policy
+
+## EMI Dates
+
+Borrowers may choose the 5th, 10th or 15th of each month as their EMI date. EMIs are collected through an auto-debit (NACH or UPI AutoPay) mandate registered before disbursement.
+
+## Processing Fee
+
+A processing fee of 2% of the loan amount, subject to a minimum of Rs 1,999, is deducted from the disbursed amount. GST at 18% applies to the processing fee.
+
+## Late Payment and Bounce Charges
+
+A grace period of 3 days applies after the EMI date. After the grace period, a late payment charge of 2% per month is levied on the overdue amount. A bounce charge of Rs 500 applies each time an auto-debit fails because of insufficient funds.
+
+## Prepayment and Foreclosure
+
+Part-prepayment and full foreclosure are allowed only after 6 EMIs have been paid. Part-prepayment is limited to 25% of the outstanding principal once per financial year and carries no charge. Foreclosure carries a charge of 4% of the outstanding principal. Individual borrowers on a floating interest rate pay no foreclosure charge.
+
+## Supplier Invoice Financing Repayment
+
+Supplier invoice financing is repaid as a single bullet payment of the financed amount plus markup on the due date. Early repayment is allowed at any time, and the markup is then charged only for the days actually used, subject to a minimum of 15 days.
+# KYC and Documentation Policy
+
+## Identity Verification
+
+A PAN card is mandatory for every applicant and co-applicant. Identity and address are verified through Aadhaar-based eKYC or, if the applicant prefers, through an Officially Valid Document (passport, voter ID or driving licence). Video KYC is accepted as a substitute for in-person verification.
+
+## Income Documents for Salaried Applicants
+
+Salaried applicants must submit salary slips for the last 3 months and bank statements for the last 6 months showing salary credits.
+
+## Income Documents for Self-Employed Applicants and Businesses
+
+Self-employed applicants must submit income tax returns for the last 2 years and bank statements for the last 12 months. Businesses must additionally submit GST returns for the last 12 months and a certificate of registration or incorporation.
+
+## Supplier Onboarding
+
+Before a supplier can receive invoice financing, the supplier must provide its GSTIN, PAN, and a cancelled cheque or bank letter, and its bank account must pass the penny-drop test.
+
+## Periodic Re-KYC
+
+Customers are re-verified periodically based on their risk category: every 2 years for high-risk customers, every 8 years for medium-risk customers, and every 10 years for low-risk customers.
+# Collections and Hardship Policy
+
+## Delinquency Buckets
+
+Overdue accounts are classified by days past due (DPD): SMA-0 for 1 to 30 DPD, SMA-1 for 31 to 60 DPD, and SMA-2 for 61 to 90 DPD. An account overdue for more than 90 days is classified as a non-performing asset (NPA).
+
+## Fair Collection Practices
+
+Collection agents must not contact borrowers before 8:00 AM or after 7:00 PM. Agents must carry an authorisation letter and identity card, and must never use threatening or abusive language. All collection calls are recorded.
+
+## Financial Hardship Support
+
+Borrowers facing genuine financial hardship, such as job loss or medical emergency, may request a moratorium of up to 3 months. Interest continues to accrue during the moratorium and is added to the outstanding principal. A borrower may receive at most one moratorium during the loan tenure.
+
+## Restructuring
+
+Loans may be restructured once, by extending the tenure by up to 12 months, if the borrower's account is not yet classified as an NPA.
+
+## Grievance Redressal
+
+Complaints should first be raised with customer support, which responds within 7 days. Unresolved complaints may be escalated to the Grievance Redressal Officer, who must resolve them within 30 days. If the complaint is still unresolved, the borrower may approach the RBI Ombudsman.

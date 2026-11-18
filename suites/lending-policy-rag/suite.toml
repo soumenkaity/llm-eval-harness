@@ -1,0 +1,16 @@
+# Evaluates the Lending Policy RAG assistant (github.com/soumenkaity/lending-policy-rag)
+# through its REST API. Start it first:  uv run uvicorn lendrag.api:app --port 8000
+name = "lending-policy-rag"
+dataset = "cases.jsonl"
+
+[target]
+url = "http://localhost:8000/ask"
+request = { question = "{input}" }
+answer = "answer"
+answered = "answered"
+contexts = "sources[*].text"
+
+[judge]
+provider = "ollama"
+model = "qwen2.5:7b"
+num_ctx = 4096

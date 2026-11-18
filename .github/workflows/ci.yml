@@ -1,0 +1,29 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+      - run: uv sync
+      - run: uv run pytest -q
+
+  eval-gate:
+    # Re-checks the committed evaluation runs with the A/B gate. No LLM is needed: the gate works on
+    # saved results. In a real pipeline the candidate run would be produced by the PR under test.
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+      - run: uv sync
+      - name: Gate passes for dropping query rewrite (shown to be within 15 pp)
+        run: uv run evalkit compare runs/rag-7b-hybrid runs/rag-7b-no-rewrite --margin 0.15 --fail-on-regression
+      - name: Gate must FAIL for the 3B vector-only config (a 12 pp drop is not ruled out)
+        run: "! uv run evalkit compare runs/rag-7b-hybrid runs/rag-3b-vector --margin 0.15 --fail-on-regression"
+      - name: The significance-only gate lets the same 3B config through (why the margin exists)
+        run: uv run evalkit compare runs/rag-7b-hybrid runs/rag-3b-vector --fail-on-regression

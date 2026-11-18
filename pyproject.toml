@@ -1,0 +1,33 @@
+[project]
+name = "evalkit"
+version = "0.1.0"
+description = "Evaluation harness for LLM apps: validated LLM-as-judge metrics, paired statistics for A/B comparisons, OpenTelemetry tracing"
+readme = "README.md"
+authors = [
+    { name = "Soumen_Kaity", email = "soumenkaity97@gmail.com" }
+]
+requires-python = ">=3.11"
+dependencies = [
+    "httpx>=0.28.1",
+    "opentelemetry-sdk>=1.45.2",
+]
+
+[project.scripts]
+evalkit = "evalkit.cli:main"
+
+[project.optional-dependencies]
+otlp = [
+    "opentelemetry-exporter-otlp-proto-http>=1.45.2",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[build-system]
+requires = ["uv_build>=0.11.28,<0.12.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.2.0",
+]
